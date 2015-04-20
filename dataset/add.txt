@@ -1,0 +1,6 @@
+http://purl.org/dc/terms/license
+http://purl.org/dc/terms/provenance
+http://purl.org/dc/terms/creator  An entity primarily responsible for making the resource.
+http://purl.org/dc/terms/created  	Date of creation of the resource.
+http://purl.org/dc/terms/publisher 
+http://purl.org/dc/elements/1.1/source A related resource from which the described resource is derived.
