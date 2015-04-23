@@ -5,7 +5,7 @@
 package io;
 
 import helper.KBInfo;
-import helper.LIMES;
+import helper.LDEN;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -55,33 +55,33 @@ public class LimesConfigReader extends ConfigReader implements RDFSpecs{
 	 */
 	public void readKBDescription(Resource kb) {
 		KBInfo kbinfo = null;
-		if(configModel.contains(kb, RDF.type, LIMES.SourceDataset)) {
+		if(configModel.contains(kb, RDF.type, LDEN.SourceDataset)) {
 			kbinfo = sourceInfo;
-		}else if(configModel.contains(kb, RDF.type, LIMES.TargetDataset)) {
+		}else if(configModel.contains(kb, RDF.type, LDEN.TargetDataset)) {
 			kbinfo = targetInfo;
 		}else{
-			logger.error("Either " + LIMES.SourceDataset + " or " + LIMES.TargetDataset + " type statement is missing");
+			logger.error("Either " + LDEN.SourceDataset + " or " + LDEN.TargetDataset + " type statement is missing");
 			System.exit(1);
 		}
 		kbinfo.id = getObject(kb, RDFS.label, true).toString();;
-		kbinfo.endpoint = getObject(kb, LIMES.endPoint, true).toString();
-		RDFNode graph = getObject(kb, LIMES.graph, false);
+		kbinfo.endpoint = getObject(kb, LDEN.endPoint, true).toString();
+		RDFNode graph = getObject(kb, LDEN.graph, false);
 		if(graph != null){
 			kbinfo.graph = graph.toString();
 		}
-		for(RDFNode r : getObjects(kb, LIMES.restriction, false)){
+		for(RDFNode r : getObjects(kb, LDEN.restriction, false)){
 			String restriction = r.toString();
 			if (restriction.endsWith(".")) {
 				restriction = restriction.substring(0, restriction.length() - 1);
 			}
 			kbinfo.restrictions.add(restriction);
 		}
-		for(RDFNode properity : getObjects(kb, LIMES.property, true)){
+		for(RDFNode properity : getObjects(kb, LDEN.property, true)){
 			processProperty(kbinfo, properity.toString());
 		}
-		kbinfo.pageSize = parseInt(getObject(kb, LIMES.pageSize, true).toString());
-		kbinfo.var = getObject(kb, LIMES.variable, true).toString();
-		RDFNode type = getObject(kb, LIMES.type, false);
+		kbinfo.pageSize = parseInt(getObject(kb, LDEN.pageSize, true).toString());
+		kbinfo.var = getObject(kb, LDEN.variable, true).toString();
+		RDFNode type = getObject(kb, LDEN.type, false);
 		if(type != null){
 			kbinfo.type = type.toString().toLowerCase();
 		}
@@ -153,11 +153,11 @@ public class LimesConfigReader extends ConfigReader implements RDFSpecs{
 	 */
 	public boolean validateAndRead(Model configurationModel){
 		configModel = configurationModel;
-		StmtIterator stats = configModel.listStatements(null, RDF.type, LIMES.LimesSpecs);
+		StmtIterator stats = configModel.listStatements(null, RDF.type, LDEN.LimesSpecs);
 		if(stats.hasNext()){
 			specsSubject = stats.next().getSubject();
 		}else{
-			logger.error("Missing " + LIMES.LimesSpecs + ", Exit with error.");
+			logger.error("Missing " + LDEN.LimesSpecs + ", Exit with error.");
 			System.exit(1);
 		}
 		sourceInfo = new KBInfo();
@@ -165,45 +165,45 @@ public class LimesConfigReader extends ConfigReader implements RDFSpecs{
 		prefixes = (HashMap<String, String>) configModel.getNsPrefixMap();
 
 		//1. 2. Source & Target information
-		readKBDescription((Resource) getObject(specsSubject, LIMES.hasSource, true));
-		readKBDescription((Resource) getObject(specsSubject, LIMES.hasTarget, true));
+		readKBDescription((Resource) getObject(specsSubject, LDEN.hasSource, true));
+		readKBDescription((Resource) getObject(specsSubject, LDEN.hasTarget, true));
 
 		//3.METRIC
-		Resource metric = (Resource) getObject(specsSubject, LIMES.hasMetric, true);
-		metricExpression = getObject(metric, LIMES.expression, true).toString();
+		Resource metric = (Resource) getObject(specsSubject, LDEN.hasMetric, true);
+		metricExpression = getObject(metric, LDEN.expression, true).toString();
 
 		//4. Number of exemplars
-		RDFNode ex = getObject(specsSubject, LIMES.exemplars, false);
+		RDFNode ex = getObject(specsSubject, LDEN.exemplars, false);
 		if(ex != null){
 			exemplars = Integer.parseInt(ex.toString());
 		}
 
 		//5. ACCEPTANCE file and conditions
-		Resource acceptance = (Resource) getObject(specsSubject, LIMES.hasAcceptance, true);
-		acceptanceThreshold = parseDouble(getObject(acceptance, LIMES.threshold, true).toString());
-		acceptanceFile = getObject(acceptance, LIMES.file, true).toString();
-		acceptanceRelation = getObject(acceptance, LIMES.relation, true).toString();
+		Resource acceptance = (Resource) getObject(specsSubject, LDEN.hasAcceptance, true);
+		acceptanceThreshold = parseDouble(getObject(acceptance, LDEN.threshold, true).toString());
+		acceptanceFile = getObject(acceptance, LDEN.file, true).toString();
+		acceptanceRelation = getObject(acceptance, LDEN.relation, true).toString();
 
 		//6. VERIFICATION file and conditions
-		Resource review = (Resource) getObject(specsSubject, LIMES.hasReview, true);
-		verificationThreshold = parseDouble(getObject(review, LIMES.threshold, true).toString());
-		verificationFile = getObject(review, LIMES.file, true).toString();
-		verificationRelation = getObject(review, LIMES.relation, true).toString();
+		Resource review = (Resource) getObject(specsSubject, LDEN.hasReview, true);
+		verificationThreshold = parseDouble(getObject(review, LDEN.threshold, true).toString());
+		verificationFile = getObject(review, LDEN.file, true).toString();
+		verificationRelation = getObject(review, LDEN.relation, true).toString();
 
 		//7. EXECUTION plan
-		RDFNode execution = getObject(specsSubject, LIMES.executionPlan, false);
+		RDFNode execution = getObject(specsSubject, LDEN.executionPlan, false);
 		if(execution != null){
 			executionPlan = execution.toString();
 		}
 
 		//8. TILING if necessary 
-		RDFNode g = getObject(specsSubject, LIMES.granularity, false);
+		RDFNode g = getObject(specsSubject, LDEN.granularity, false);
 		if(g != null){
 			granularity = Integer.parseInt(g.toString());
 		}
 
 		//9. OUTPUT format
-		RDFNode output = getObject(specsSubject, LIMES.outputFormat, false);
+		RDFNode output = getObject(specsSubject, LDEN.outputFormat, false);
 		if(output != null){
 			outputFormat = output.toString();
 		}
@@ -257,79 +257,79 @@ public class LimesConfigReader extends ConfigReader implements RDFSpecs{
 			cr.validateAndRead(filePath);
 		}
 		Model m = ModelFactory.createDefaultModel();
-		String uri = LIMES.uri + sourceInfo.id.toLowerCase() + "TO" + targetInfo.id.toLowerCase();
+		String uri = LDEN.uri + sourceInfo.id.toLowerCase() + "TO" + targetInfo.id.toLowerCase();
 		Resource s = ResourceFactory.createResource(uri); 
-		m.add(s, RDF.type, LIMES.LimesSpecs);
+		m.add(s, RDF.type, LDEN.LimesSpecs);
 
 		// 1. Source
 		Resource source = ResourceFactory.createResource(uri + "Source");
-		m.add(s, LIMES.hasSource, source);
-		m.add(source, RDF.type, LIMES.SourceDataset);
+		m.add(s, LDEN.hasSource, source);
+		m.add(source, RDF.type, LDEN.SourceDataset);
 		m.add(source, RDFS.label, sourceInfo.id);
-		m.add(source, LIMES.endPoint, sourceInfo.endpoint);
-		m.add(source, LIMES.variable, sourceInfo.var);
-		m.add(source, LIMES.pageSize, sourceInfo.pageSize + "");
+		m.add(source, LDEN.endPoint, sourceInfo.endpoint);
+		m.add(source, LDEN.variable, sourceInfo.var);
+		m.add(source, LDEN.pageSize, sourceInfo.pageSize + "");
 		for(String r : sourceInfo.restrictions){
-			m.add(source, LIMES.restriction, ResourceFactory.createPlainLiteral(r));
+			m.add(source, LDEN.restriction, ResourceFactory.createPlainLiteral(r));
 		}
 		for(String p : sourceInfo.properties){
-			m.add(source, LIMES.property, ResourceFactory.createPlainLiteral(p));
+			m.add(source, LDEN.property, ResourceFactory.createPlainLiteral(p));
 		}
 
 		// 2. Target
 		Resource target = ResourceFactory.createResource(uri + "Target");
-		m.add(s, LIMES.hasTarget, target);
-		m.add(target, RDF.type, LIMES.TargetDataset);
+		m.add(s, LDEN.hasTarget, target);
+		m.add(target, RDF.type, LDEN.TargetDataset);
 		m.add(target, RDFS.label, targetInfo.id);
-		m.add(target, LIMES.endPoint, targetInfo.endpoint+ "");
-		m.add(target, LIMES.variable, targetInfo.var+ "");
-		m.add(target, LIMES.pageSize, targetInfo.pageSize + "");
+		m.add(target, LDEN.endPoint, targetInfo.endpoint+ "");
+		m.add(target, LDEN.variable, targetInfo.var+ "");
+		m.add(target, LDEN.pageSize, targetInfo.pageSize + "");
 		for(String r : targetInfo.restrictions){
-			m.add(target, LIMES.restriction, r);
+			m.add(target, LDEN.restriction, r);
 		}
 		for(String p : targetInfo.properties){
-			m.add(target, LIMES.property, p);
+			m.add(target, LDEN.property, p);
 		}
 
 		// 3. Metric
 		Resource metric = ResourceFactory.createResource(uri + "Metric");
-		m.add(s, LIMES.hasMetric, metric);
-		m.add(metric, RDF.type, LIMES.Metric);
-		m.add(metric, LIMES.expression, metricExpression);
+		m.add(s, LDEN.hasMetric, metric);
+		m.add(metric, RDF.type, LDEN.Metric);
+		m.add(metric, LDEN.expression, metricExpression);
 
 		//4. Number of exemplars
-		m.add(s, LIMES.exemplars, exemplars + "");
+		m.add(s, LDEN.exemplars, exemplars + "");
 
 		//5. ACCEPTANCE file and conditions
 		Resource acceptance = ResourceFactory.createResource(uri + "Acceptance");
-		m.add(s, LIMES.hasAcceptance, acceptance);
-		m.add(acceptance, RDF.type, LIMES.Acceptance);
-		m.add(acceptance, LIMES.threshold, acceptanceThreshold + "");
-		m.add(acceptance, LIMES.file, acceptanceFile);
-		m.add(acceptance, LIMES.relation, acceptanceRelation);
+		m.add(s, LDEN.hasAcceptance, acceptance);
+		m.add(acceptance, RDF.type, LDEN.Acceptance);
+		m.add(acceptance, LDEN.threshold, acceptanceThreshold + "");
+		m.add(acceptance, LDEN.file, acceptanceFile);
+		m.add(acceptance, LDEN.relation, acceptanceRelation);
 
 		//6. VERIFICATION file and conditions
 		Resource review = ResourceFactory.createResource(uri + "Review");
-		m.add(s, LIMES.hasReview, review);
-		m.add(review, RDF.type, LIMES.Review);
-		m.add(review, LIMES.threshold, verificationThreshold + "");
-		m.add(review, LIMES.file, verificationFile);
-		m.add(review, LIMES.relation, verificationRelation);
+		m.add(s, LDEN.hasReview, review);
+		m.add(review, RDF.type, LDEN.Review);
+		m.add(review, LDEN.threshold, verificationThreshold + "");
+		m.add(review, LDEN.file, verificationFile);
+		m.add(review, LDEN.relation, verificationRelation);
 
 		//7. EXECUTION plan
-		m.add(s, LIMES.executionPlan, executionPlan);
+		m.add(s, LDEN.executionPlan, executionPlan);
 
 		//8. TILING if necessary 
-		m.add(s, LIMES.granularity, granularity + "");
+		m.add(s, LDEN.granularity, granularity + "");
 
 		//9. OUTPUT format
 		if(outputFormat != null){
-			m.add(s, LIMES.outputFormat, outputFormat);
+			m.add(s, LDEN.outputFormat, outputFormat);
 		}
 
 		// Prefixes
 		m.setNsPrefixes(prefixes);
-		m.setNsPrefix(LIMES.prefix, LIMES.uri);
+		m.setNsPrefix(LDEN.prefix, LDEN.uri);
 		m.setNsPrefix("owl", OWL.NS);
 		m.setNsPrefix("rdfs", "http://www.w3.org/2000/01/rdf-schema#");
 		m.setNsPrefix("swpo", "http://sw-portal.deri.org/ontologies/swportal#");
@@ -341,82 +341,82 @@ public class LimesConfigReader extends ConfigReader implements RDFSpecs{
 	public Model xmlConfigToRDFConfigExtended(String filePath){
 		super.validateAndRead(filePath);
 		Model m = ModelFactory.createDefaultModel();
-		String uri = LIMES.uri + filePath.substring(filePath.lastIndexOf("/"), filePath.lastIndexOf("."));
+		String uri = LDEN.uri + filePath.substring(filePath.lastIndexOf("/"), filePath.lastIndexOf("."));
 		Resource s = ResourceFactory.createResource(uri); 
-		m.add(s, RDF.type, LIMES.LimesSpecs);
+		m.add(s, RDF.type, LDEN.LimesSpecs);
 
 		// Prefixes
 		m.setNsPrefixes(prefixes);
-		m.setNsPrefix(LIMES.prefix, LIMES.uri);
+		m.setNsPrefix(LDEN.prefix, LDEN.uri);
 		m.setNsPrefix("owl", OWL.NS);
 		m.setNsPrefix("rdfs", "http://www.w3.org/2000/01/rdf-schema#");
 
 		// 1. Source
 		Resource source = ResourceFactory.createResource(uri + "_source");
-		m.add(s, LIMES.hasSource, source);
-		m.add(source, RDF.type, LIMES.SourceDataset);
+		m.add(s, LDEN.hasSource, source);
+		m.add(source, RDF.type, LDEN.SourceDataset);
 		m.add(source, RDFS.label, sourceInfo.id);
-		m.add(source, LIMES.endPoint, ResourceFactory.createResource(sourceInfo.endpoint));
-		m.add(source, LIMES.variable, sourceInfo.var);
-		m.add(source, LIMES.pageSize, ResourceFactory.createTypedLiteral(sourceInfo.pageSize));
+		m.add(source, LDEN.endPoint, ResourceFactory.createResource(sourceInfo.endpoint));
+		m.add(source, LDEN.variable, sourceInfo.var);
+		m.add(source, LDEN.pageSize, ResourceFactory.createTypedLiteral(sourceInfo.pageSize));
 		for(String r : sourceInfo.restrictions){
-			m.add(source, LIMES.restriction, ResourceFactory.createPlainLiteral(r));
+			m.add(source, LDEN.restriction, ResourceFactory.createPlainLiteral(r));
 		}
 		for(String p : sourceInfo.properties){
-			m.add(source, LIMES.property, createResource(m, p));
+			m.add(source, LDEN.property, createResource(m, p));
 		}
 
 		// 2. Target
 		Resource target = ResourceFactory.createResource(uri + "_target");
-		m.add(s, LIMES.hasTarget, target);
-		m.add(target, RDF.type, LIMES.TargetDataset);
+		m.add(s, LDEN.hasTarget, target);
+		m.add(target, RDF.type, LDEN.TargetDataset);
 		m.add(target, RDFS.label, targetInfo.id);
-		m.add(target, LIMES.endPoint, ResourceFactory.createResource(targetInfo.endpoint));
-		m.add(target, LIMES.variable, targetInfo.var+ "");
-		m.add(target, LIMES.pageSize, ResourceFactory.createTypedLiteral(targetInfo.pageSize));
+		m.add(target, LDEN.endPoint, ResourceFactory.createResource(targetInfo.endpoint));
+		m.add(target, LDEN.variable, targetInfo.var+ "");
+		m.add(target, LDEN.pageSize, ResourceFactory.createTypedLiteral(targetInfo.pageSize));
 		for(String r : targetInfo.restrictions){
-			m.add(target, LIMES.restriction, r);
+			m.add(target, LDEN.restriction, r);
 		}
 		for(String p : targetInfo.properties){
-			m.add(target, LIMES.property, createResource(m, p));
+			m.add(target, LDEN.property, createResource(m, p));
 		}
 
 		// 3. Metric
 		Resource metric = ResourceFactory.createResource(uri + "_metric");
-		m.add(s, LIMES.hasMetric, metric);
-		m.add(metric, RDF.type, LIMES.Metric);
-		m.add(metric, LIMES.expression, metricExpression);
+		m.add(s, LDEN.hasMetric, metric);
+		m.add(metric, RDF.type, LDEN.Metric);
+		m.add(metric, LDEN.expression, metricExpression);
 
 		//4. Number of exemplars
 		if(exemplars > 0){
-			m.add(s, LIMES.exemplars, exemplars + "");
+			m.add(s, LDEN.exemplars, exemplars + "");
 		}
 
 		//5. ACCEPTANCE file and conditions
 		Resource acceptance = ResourceFactory.createResource(uri + "_acceptance");
-		m.add(s, LIMES.hasAcceptance, acceptance);
-		m.add(acceptance, RDF.type, LIMES.Acceptance);
-		m.add(acceptance, LIMES.threshold, ResourceFactory.createTypedLiteral(acceptanceThreshold));
-		m.add(acceptance, LIMES.file, ResourceFactory.createResource(acceptanceFile));
-		m.add(acceptance, LIMES.relation, createResource(m, acceptanceRelation));
+		m.add(s, LDEN.hasAcceptance, acceptance);
+		m.add(acceptance, RDF.type, LDEN.Acceptance);
+		m.add(acceptance, LDEN.threshold, ResourceFactory.createTypedLiteral(acceptanceThreshold));
+		m.add(acceptance, LDEN.file, ResourceFactory.createResource(acceptanceFile));
+		m.add(acceptance, LDEN.relation, createResource(m, acceptanceRelation));
 
 		//6. VERIFICATION file and conditions
 		Resource review = ResourceFactory.createResource(uri + "_review");
-		m.add(s, LIMES.hasReview, review);
-		m.add(review, RDF.type, LIMES.Review);
-		m.add(review, LIMES.threshold, ResourceFactory.createTypedLiteral(verificationThreshold));
-		m.add(review, LIMES.file, ResourceFactory.createResource(verificationFile));
-		m.add(review, LIMES.relation, createResource(m, verificationRelation));
+		m.add(s, LDEN.hasReview, review);
+		m.add(review, RDF.type, LDEN.Review);
+		m.add(review, LDEN.threshold, ResourceFactory.createTypedLiteral(verificationThreshold));
+		m.add(review, LDEN.file, ResourceFactory.createResource(verificationFile));
+		m.add(review, LDEN.relation, createResource(m, verificationRelation));
 
 		//7. EXECUTION plan
-		m.add(s, LIMES.executionPlan, executionPlan);
+		m.add(s, LDEN.executionPlan, executionPlan);
 
 		//8. TILING if necessary 
-		m.add(s, LIMES.granularity, ResourceFactory.createTypedLiteral(granularity));
+		m.add(s, LDEN.granularity, ResourceFactory.createTypedLiteral(granularity));
 
 		//9. OUTPUT format
 		if(outputFormat != null){
-			m.add(s, LIMES.outputFormat, outputFormat);
+			m.add(s, LDEN.outputFormat, outputFormat);
 		}
 		
 		enrichModelWithMetaData(m, s, enrichFile);
