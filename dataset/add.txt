@@ -1,6 +1,6 @@
-http://purl.org/dc/terms/license
-http://purl.org/dc/terms/provenance
-http://purl.org/dc/terms/creator  An entity primarily responsible for making the resource.
-http://purl.org/dc/terms/created  	Date of creation of the resource.
-http://purl.org/dc/terms/publisher 
-http://purl.org/dc/elements/1.1/source A related resource from which the described resource is derived.
+http://purl.org/dc/terms/license https://github.com/LATC/sandbox/blob/master/linksets/README
+http://purl.org/dc/terms/provenance Data are obtained from http://aksw.org/Projects/LATC.html
+http://purl.org/dc/terms/creator LATC	
+http://purl.org/dc/terms/created 2011
+http://purl.org/dc/terms/publisher AKSW
+http://purl.org/dc/terms/source https://github.com/LATC/sandbox/tree/master/linksets

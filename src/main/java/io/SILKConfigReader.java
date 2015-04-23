@@ -22,8 +22,10 @@ import org.w3c.dom.NodeList;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.ResourceFactory;
+import com.hp.hpl.jena.sparql.util.NodeFactory;
 import com.hp.hpl.jena.vocabulary.OWL;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
@@ -39,13 +41,13 @@ public class SILKConfigReader extends ConfigReader implements RDFSpecs{
 	Document xmlDocument =null;
 	private Resource specsSubject;
 	private static Map<String,String> problematicFiles =null;
-
+	private static String enrichFile ="";
 
 	/**
 	 * Returns true if the input complies to the LIMES DTD and contains
 	 * everything needed. NB: The path to the DTD must be specified in the input
 	 * file
-	 *
+	 * @author mofeed
 	 * @param input The input XML file as Stream
 	 * @return true if parsing was successful, else false
 	 * @throws Exception 
@@ -62,6 +64,7 @@ public class SILKConfigReader extends ConfigReader implements RDFSpecs{
 			processTag("DataSource");
 			processTag("LinkCondition");
 			processTag("LinkType");
+			processTag("Blocking");
 			processTag("Output");
 		} catch (Exception e) {
 			logger.error("Some Tags were not set.");
@@ -74,7 +77,7 @@ public class SILKConfigReader extends ConfigReader implements RDFSpecs{
 
 	/**
 	 * @throws Exception
-	 * @author sherif
+	 * @author mofeed
 	 */
 	public void processPrefixes() throws Exception
 	{
@@ -102,7 +105,7 @@ public class SILKConfigReader extends ConfigReader implements RDFSpecs{
 	 * @param kbinfo
 	 * @param dataSet
 	 * @throws Exception
-	 * @author sherif
+	 * @author mofeed
 	 */
 	public void processDataSets(KBInfo kbinfo, String dataSet) throws Exception
 	{
@@ -134,7 +137,7 @@ public class SILKConfigReader extends ConfigReader implements RDFSpecs{
 
 	/**
 	 * @throws Exception
-	 * @author sherif
+	 * @author mofeed
 	 */
 	public void processDataSource() throws Exception{
 		NodeList list = xmlDocument.getElementsByTagName("DataSource");
@@ -152,6 +155,11 @@ public class SILKConfigReader extends ConfigReader implements RDFSpecs{
 				processDataSourceParameters(targetInfo, dataSource, dataSourceAttributes);
 		}
 	}
+	/**
+	 * @param 
+	 * @return
+	 * @author mofeed
+	 */
 	public void processDataSourceParameters(KBInfo kbInfo,Node dataSource ,NamedNodeMap dataSourceAttributes)
 	{
 		kbInfo.type =  dataSourceAttributes.getNamedItem("type").getNodeValue();
@@ -169,6 +177,11 @@ public class SILKConfigReader extends ConfigReader implements RDFSpecs{
 			}
 		}
 	}
+	/**
+	 * @param 
+	 * @return
+	 * @author mofeed
+	 */
 	public void processLinkCondition() throws Exception{
 		NodeList filter = xmlDocument.getElementsByTagName("Filter");
 		Node filterThreshold = filter.item(0).getAttributes().getNamedItem("threshold");
@@ -231,7 +244,11 @@ public class SILKConfigReader extends ConfigReader implements RDFSpecs{
 			}
 		}
 	}
-
+	/**
+	 * @param 
+	 * @return
+	 * @author mofeed
+	 */
 	public List<String> processTransformInput_Aux(Node transformInput)
 	{
 		///attributes
@@ -259,7 +276,11 @@ public class SILKConfigReader extends ConfigReader implements RDFSpecs{
 		}
 		return inputs;
 	}
-
+	/**
+	 * @param 
+	 * @return
+	 * @author mofeed
+	 */
 	public Map<String,String> processTransformInput(Node transformInput){
 		List<String> inputs =  processTransformInput_Aux(transformInput);
 		Map<String,String> processedInputs = new HashMap<String, String>();
@@ -285,7 +306,7 @@ public class SILKConfigReader extends ConfigReader implements RDFSpecs{
 	/**
 	 * @param compare
 	 * @return
-	 * @author sherif
+	 * @author mofeed
 	 */
 	public String processCompare(Node compare)
 	{
@@ -331,7 +352,7 @@ public class SILKConfigReader extends ConfigReader implements RDFSpecs{
 	/**
 	 * @param aggregate
 	 * @return
-	 * @author sherif
+	 * @author mofeed
 	 */
 	public String processAggregate(Node aggregate){
 		String aggregateFn = aggregate.getAttributes().getNamedItem("type").getNodeValue();
@@ -363,7 +384,7 @@ public class SILKConfigReader extends ConfigReader implements RDFSpecs{
 	}
 	/**
 	 * @throws Exception
-	 * @author sherif
+	 * @author mofeed
 	 */
 	public void processLinkConditionRec() throws Exception{
 		try{
@@ -392,7 +413,7 @@ public class SILKConfigReader extends ConfigReader implements RDFSpecs{
 
 	/**
 	 * 
-	 * @author sherif
+	 * @author mofeed
 	 */
 	public void processLinkCondition2()
 	{
@@ -479,7 +500,7 @@ public class SILKConfigReader extends ConfigReader implements RDFSpecs{
 	/**
 	 * @param input
 	 * @param cInputs
-	 * @author sherif
+	 * @author mofeed
 	 */
 	public void getCompareInput(Node input,HashMap<String,String> cInputs)
 	{
@@ -538,7 +559,7 @@ public class SILKConfigReader extends ConfigReader implements RDFSpecs{
 	
 	/**
 	 * @throws Exception
-	 * @author sherif
+	 * @author mofeed
 	 */
 	public void processLinkType() throws Exception
 	{
@@ -556,12 +577,31 @@ public class SILKConfigReader extends ConfigReader implements RDFSpecs{
 		///default value as not matched to something to silk
 		verificationRelation = acceptanceRelation;
 	}
+	/**
+	 * @throws Exception
+	 * @author mofeed
+	 */
+	public void processBlocking() throws Exception
+	{
+		NodeList list = xmlDocument.getElementsByTagName("Blocking");
+		if(list.getLength() > 0 ){ // there is blocking tag
+			int BlockingNr =list.getLength();
+			for (int i=0;i< BlockingNr;i++){ // for each prefix
+				Node Block = list.item(i); 
+				if (Block.getNodeType() == Node.ELEMENT_NODE){ // for each prefix there is additional text element (empty one) which is bypassed
+					NamedNodeMap attributes = Block.getAttributes();
+					if(attributes.getLength() > 0)
+						blocking =Integer.parseInt( Block.getAttributes().getNamedItem("blocks").getNodeValue());
+				}
+			}
+		}
+	}
 	
 	
 	/**
 	 * @param Tag
 	 * @throws Exception
-	 * @author sherif
+	 * @author mofeed
 	 */
 	public void processTag(String Tag) throws Exception{
 		if(Tag.equalsIgnoreCase("prefixes"))
@@ -579,13 +619,15 @@ public class SILKConfigReader extends ConfigReader implements RDFSpecs{
 			processLinkType();
 		else if (Tag.equalsIgnoreCase("output"))
 			processOutput();	
+		else if(Tag.equalsIgnoreCase("blocking"))
+			processBlocking();
 	}
 	
 	
 	/**
 	 * @param input
 	 * @throws Exception
-	 * @author sherif
+	 * @author mofeed
 	 */
 	public void initializeDOM4SILK(InputStream input) throws Exception{
 		try{
@@ -607,7 +649,7 @@ public class SILKConfigReader extends ConfigReader implements RDFSpecs{
 	
 	/**
 	 * @param node
-	 * @author sherif
+	 * @author mofeed
 	 */
 	public static void clean(Node node){
 		for(int n = 0; n < node.getChildNodes().getLength(); n++){
@@ -621,17 +663,41 @@ public class SILKConfigReader extends ConfigReader implements RDFSpecs{
 			}
 		}
 	}
-	
+
 	
 	/**
-	 * @param s
+	 * @param 
 	 * @return
-	 * @author sherif
+	 * @author mofeed
 	 */
 	public static boolean testWhiteSpace(String s){
 		if(s.equals("\n") || s.equals("\r") || s.equals("\t"))
 			return true;
 		return false;
+	}
+	/**
+	 * @param s
+	 * @return
+	 * @author mofeed
+	 */
+	public void enrichModelWithMetaData(Model m, Resource s, String enrichingFile)
+	{
+		List<String> fileLines = ReadWRiteFile.readFile(enrichingFile);
+		for (String line : fileLines) {
+			String[] parts =line.split(" ");
+			String objectString ="";
+			for(int i=1;i<parts.length;i++)
+				objectString+=parts[i]+" ";
+			objectString = objectString.trim();
+			String propertyString =  parts[0].trim();
+			if(parts[1].startsWith("http") &&parts[1].contains(":") )
+			{
+				Resource obj = ResourceFactory.createResource((objectString));
+				m.add(s,ResourceFactory.createProperty(propertyString),obj);
+			}
+			else
+				m.add(s,ResourceFactory.createProperty(propertyString), objectString);
+		}
 	}
 	
 	
@@ -673,7 +739,7 @@ public class SILKConfigReader extends ConfigReader implements RDFSpecs{
 		m.setNsPrefix(LIMES.prefix, LIMES.uri);
 		m.setNsPrefix("owl", OWL.NS);
 		m.setNsPrefix("rdfs", "http://www.w3.org/2000/01/rdf-schema#");
-
+		m.setNsPrefix("swpo", "http://sw-portal.deri.org/ontologies/swportal#");
 		// 1. Source
 		Resource source = ResourceFactory.createResource(uri + "_source");
 		m.add(s, LIMES.hasSource, source);
@@ -741,6 +807,8 @@ public class SILKConfigReader extends ConfigReader implements RDFSpecs{
 		if(outputFormat != null){
 			m.add(s, LIMES.outputFormat, outputFormat);
 		}
+		
+		enrichModelWithMetaData(m, s, enrichFile);
 		return m;
 	}
 	
@@ -748,7 +816,7 @@ public class SILKConfigReader extends ConfigReader implements RDFSpecs{
 	/**
 	 * @param specsPaths
 	 * @return
-	 * @author sherif
+	 * @author mofeed
 	 */
 	public  static List<String> getSpecsFiles(String specsPaths){
 		List<String> specFiles =  new ArrayList<String>();
@@ -773,8 +841,11 @@ public class SILKConfigReader extends ConfigReader implements RDFSpecs{
 	 * @author mofeed
 	 */
 	public static void main(String args[]) {
-		String specsSourceFolder = args[0];
-		//String specsTargetFolder = args[1];
+		String specsSourceFolder = args[0].trim();
+		File f = new File(specsSourceFolder +"/meta-data");
+		if(f.exists() && !f.isDirectory()) 
+		{ enrichFile = f.getAbsolutePath(); }
+					
 		problematicFiles= new HashMap<String, String>();
 		List<String> specFiles =null;
 		try{
@@ -783,7 +854,9 @@ public class SILKConfigReader extends ConfigReader implements RDFSpecs{
 			logger.error("problem in loading files\n"+e.getMessage());
 			System.exit(1);
 		}
-		System.out.println("Number of files = "+ specFiles.size());
+		int totalFiles = specFiles.size();
+		int totalNonConverted =0;
+		System.out.println("Number of files = "+ totalFiles);
 		SILKConfigReader cr = new SILKConfigReader(); //ConfigReaderSILK
 		long starTime = System.currentTimeMillis();
 		FileWriter fileWriter;
@@ -806,7 +879,9 @@ public class SILKConfigReader extends ConfigReader implements RDFSpecs{
 			}
 		}
 		for (String fileName : problematicFiles.keySet()) {
+			totalNonConverted++;
 			System.out.println("Error in file "+ fileName + " : "+ problematicFiles.get(fileName));
 		}
+		System.out.println("Total number of successfully converted file = "+(totalFiles-totalNonConverted) +" out of "+ totalFiles);
 	}
 }

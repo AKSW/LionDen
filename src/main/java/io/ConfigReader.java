@@ -37,6 +37,7 @@ public class ConfigReader {
 	public double verificationThreshold;
 	public String verificationFile;
 	public int exemplars;
+	public int blocking =100;
 	public HashMap<String, String> prefixes;
 	public String outputFormat;
 	public String executionPlan;
@@ -154,19 +155,6 @@ public class ConfigReader {
 			//make sure document is valid
 			factory.setValidating(true);
 			DocumentBuilder builder = factory.newDocumentBuilder();
-			//			            builder.setErrorHandler(dtdChecker);
-
-			builder.setEntityResolver(new EntityResolver() {
-				@Override
-				public InputSource resolveEntity(String publicId, String systemId)
-						throws SAXException, IOException {
-					if (systemId.contains("limes.dtd")) {
-						return new InputSource(ConfigReader.class.getResourceAsStream("/resources/limes.dtd"));
-					} else {
-						return null;
-					}
-				}
-			});
 			Document xmlDocument = builder.parse(input);
 
 			//            if (dtdChecker.valid) {

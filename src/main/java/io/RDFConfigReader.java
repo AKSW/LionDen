@@ -37,6 +37,7 @@ import com.hp.hpl.jena.vocabulary.RDFS;
  */
 public class RDFConfigReader extends ConfigReader implements RDFSpecs{
 	private static Model configModel = ModelFactory.createDefaultModel();
+	private static String enrichFile;
 	private Resource specsSubject;
 
 	/**
@@ -117,7 +118,7 @@ public class RDFConfigReader extends ConfigReader implements RDFSpecs{
 	 * @author sherif
 	 */
 	private static Set<RDFNode> getObjects(Resource s, Property p, boolean isMandatory){
-		Set<RDFNode> result = new HashSet<>();
+		Set<RDFNode> result = new HashSet<RDFNode>();
 		StmtIterator statements = configModel.listStatements(s, p, (RDFNode) null);
 		while(statements.hasNext()){
 			result.add(statements.next().getObject());	
@@ -208,7 +209,30 @@ public class RDFConfigReader extends ConfigReader implements RDFSpecs{
 		}
 		return true;
 	}
-
+	/**
+	 * @param s
+	 * @return
+	 * @author mofeed
+	 */
+	public void enrichModelWithMetaData(Model m, Resource s, String enrichingFile)
+	{
+		List<String> fileLines = ReadWRiteFile.readFile(enrichingFile);
+		for (String line : fileLines) {
+			String[] parts =line.split(" ");
+			String objectString ="";
+			for(int i=1;i<parts.length;i++)
+				objectString+=parts[i]+" ";
+			objectString = objectString.trim();
+			if(parts[1].startsWith("http") &&parts[1].contains(":") )
+			{
+				Resource obj = ResourceFactory.createResource((objectString));
+				m.add(s,ResourceFactory.createProperty(parts[0].trim()),obj);
+			}
+			else
+				m.add(s,ResourceFactory.createProperty(parts[0]), objectString);
+		}
+	}
+	
 	/**
 	 * @param s
 	 * @return
@@ -308,6 +332,8 @@ public class RDFConfigReader extends ConfigReader implements RDFSpecs{
 		m.setNsPrefix(LIMES.prefix, LIMES.uri);
 		m.setNsPrefix("owl", OWL.NS);
 		m.setNsPrefix("rdfs", "http://www.w3.org/2000/01/rdf-schema#");
+		m.setNsPrefix("swpo", "http://sw-portal.deri.org/ontologies/swportal#");
+
 		return m;
 	}
 
@@ -392,6 +418,9 @@ public class RDFConfigReader extends ConfigReader implements RDFSpecs{
 		if(outputFormat != null){
 			m.add(s, LIMES.outputFormat, outputFormat);
 		}
+		
+		enrichModelWithMetaData(m, s, enrichFile);
+
 		return m;
 	}
 
@@ -454,7 +483,11 @@ public class RDFConfigReader extends ConfigReader implements RDFSpecs{
 		logger.info("Loading " + fileNameOrUri + " is done in " + (System.currentTimeMillis()-startTime) + "ms.");
 		return model;
 	}
-
+	/**
+	 * @param specsPaths
+	 * @return
+	 * @author mofeed
+	 */
 	public  static List<String> getSpecsFiles(String specsPaths)
 	{
 		List<String> specFiles =  new ArrayList<String>();
@@ -480,11 +513,14 @@ public class RDFConfigReader extends ConfigReader implements RDFSpecs{
 	 */
 	public static void main(String args[]) {
 		RDFConfigReader cr = new RDFConfigReader(); //ConfigReaderSILK
-		//		String file = "/home/sherif/JavaProjects/LIMES/Examples/acm_dblp.ttl";
-		//		cr.validateAndRead(file);
+		String specsSourceFolder = args[0].trim();
+		File f = new File(specsSourceFolder +"/meta-data");
+		if(f.exists() && !f.isDirectory()) 
+		{ enrichFile = f.getAbsolutePath(); }
 		long starTime = System.currentTimeMillis();
 		FileWriter fileWriter;
-		try {
+		generateSpecs(specsSourceFolder);
+/*		try {
 			logger.info("read file: " + args[0]);
 			String outputFile = args[0].substring(0, args[0].lastIndexOf(".")) + ".ttl";
 			fileWriter = new FileWriter(outputFile);
@@ -500,7 +536,7 @@ public class RDFConfigReader extends ConfigReader implements RDFSpecs{
 			logger.info("Converted file saved to " + outputFile);
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		}*/
 		//		generateSpecs(args[0]);
 
 	}
@@ -525,7 +561,11 @@ public class RDFConfigReader extends ConfigReader implements RDFSpecs{
 		RDFConfigReader cr = new RDFConfigReader(); //ConfigReaderSILK
 		long starTime = System.currentTimeMillis();
 		FileWriter fileWriter;
+		int numberOfFiles = specFiles.size();
+		int nonConvertedFiles = 0;
 		for (String specFile : specFiles) {
+			if(specFile.equals("/home/mofeed/Projects/LinksSpecsDataset/LinksSpecifications/LIMES/gho-linkedct-country_spec.xml"))
+				nonConvertedFiles = 0;
 			try {
 				logger.info("read file: " + specFile);
 				String outputFile = specFile.substring(0, specFile.lastIndexOf(".")) + ".ttl";
@@ -536,6 +576,7 @@ public class RDFConfigReader extends ConfigReader implements RDFSpecs{
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+					nonConvertedFiles++;
 				}
 				m.write(fileWriter, "TTL");
 				logger.info("Done in " + (System.currentTimeMillis() - starTime) + "ms");
@@ -543,5 +584,6 @@ public class RDFConfigReader extends ConfigReader implements RDFSpecs{
 			} catch (Exception e) { System.out.println(e.getMessage());
 			}
 		}
+		System.out.println((numberOfFiles - nonConvertedFiles) + " out of " + numberOfFiles);
 	}
 }
