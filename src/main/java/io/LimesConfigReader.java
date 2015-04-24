@@ -344,7 +344,7 @@ public class LimesConfigReader extends ConfigReader implements RDFSpecs{
 	public Model xmlConfigToRDFConfigExtended(String filePath){
 		super.validateAndRead(filePath);
 		Model m = ModelFactory.createDefaultModel();
-		String uri = LDEN.uri + filePath.substring(filePath.lastIndexOf("/"), filePath.lastIndexOf("."));
+		String uri = LDEN.uri + filePath.substring(filePath.lastIndexOf("/")+1, filePath.lastIndexOf("."));
 		Resource s = ResourceFactory.createResource(uri); 
 		m.add(s, RDF.type, LDEN.LimesSpecs);
 
