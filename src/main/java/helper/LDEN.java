@@ -12,8 +12,8 @@ import com.hp.hpl.jena.rdf.model.ResourceFactory;
  *
  */
 public class LDEN {				  
-	public static final String uri = "http://limes.sf.net/ontology/";
-	public static final String prefix = "limes";
+	public static final String uri = "www.linklion.org/lden#";
+	public static final String prefix = "lden";
 
 	private static Property property(String name) {
 		Property result = ResourceFactory.createProperty(uri + name);

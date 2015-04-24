@@ -84,9 +84,9 @@ public class SpecsKBGenerator {
 		for (String specFile : specFiles) {
 			try {
 				logger.info("Read file: " + specFile);
-				String outputFile = specFile.substring(0, specFile.lastIndexOf(".")) + ".ttl";
+				String outputFile = outputFolder + "/" + specFile.substring(specFile.lastIndexOf("/")+1, specFile.lastIndexOf(".")) + ".ttl";
 				fileWriter = new FileWriter(outputFile);
-				Model m = null;
+				Model m = ModelFactory.createDefaultModel();
 				try {
 					m = cr.xmlConfigToRDFConfigExtended(specFile);
 				} catch (Exception e) {

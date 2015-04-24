@@ -13,9 +13,11 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.PriorityBlockingQueue;
 
 import com.hp.hpl.jena.datatypes.RDFDatatype;
 import com.hp.hpl.jena.datatypes.xsd.XSDDatatype;
+import com.hp.hpl.jena.graph.Node;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
@@ -23,6 +25,7 @@ import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.ResourceFactory;
 import com.hp.hpl.jena.rdf.model.StmtIterator;
+import com.hp.hpl.jena.sparql.util.NodeFactory;
 import com.hp.hpl.jena.util.FileManager;
 import com.hp.hpl.jena.vocabulary.OWL;
 import com.hp.hpl.jena.vocabulary.RDF;
@@ -232,7 +235,7 @@ public class LimesConfigReader extends ConfigReader implements RDFSpecs{
 				m.add(s,ResourceFactory.createProperty(parts[0]), objectString);
 		}
 	}
-	
+
 	/**
 	 * @param s
 	 * @return
@@ -349,7 +352,8 @@ public class LimesConfigReader extends ConfigReader implements RDFSpecs{
 		m.setNsPrefixes(prefixes);
 		m.setNsPrefix(LDEN.prefix, LDEN.uri);
 		m.setNsPrefix("owl", OWL.NS);
-		m.setNsPrefix("rdfs", "http://www.w3.org/2000/01/rdf-schema#");
+		m.setNsPrefix("rdfs", RDFS.getURI());
+		m.setNsPrefix("rdf", RDF.getURI());
 
 		// 1. Source
 		Resource source = ResourceFactory.createResource(uri + "_source");
@@ -363,7 +367,17 @@ public class LimesConfigReader extends ConfigReader implements RDFSpecs{
 			m.add(source, LDEN.restriction, ResourceFactory.createPlainLiteral(r));
 		}
 		for(String p : sourceInfo.properties){
-			m.add(source, LDEN.property, createResource(m, p));
+			// dealing with property chain
+			if(p.contains("/")){
+				String[] splits = p.split("/");
+				List<Resource> propChain = new ArrayList<>();
+				for(String split : splits){
+					propChain.add(createResource(m, split));
+				}
+				m.add(source, LDEN.property, m.createList(propChain.iterator()));
+			}else{
+				m.add(source, LDEN.property, createResource(m, p));	
+			}
 		}
 
 		// 2. Target
@@ -378,7 +392,17 @@ public class LimesConfigReader extends ConfigReader implements RDFSpecs{
 			m.add(target, LDEN.restriction, r);
 		}
 		for(String p : targetInfo.properties){
-			m.add(target, LDEN.property, createResource(m, p));
+			// dealing with property chain
+			if(p.contains("/")){
+				String[] splits = p.split("/");
+				List<Resource> propChain = new ArrayList<>();
+				for(String split : splits){
+					propChain.add(createResource(m, split));
+				}
+				m.add(target, LDEN.property, m.createList(propChain.iterator()));
+			}else{
+				m.add(target, LDEN.property, createResource(m, p));	
+			}
 		}
 
 		// 3. Metric
@@ -418,7 +442,7 @@ public class LimesConfigReader extends ConfigReader implements RDFSpecs{
 		if(outputFormat != null){
 			m.add(s, LDEN.outputFormat, outputFormat);
 		}
-		
+
 		enrichModelWithMetaData(m, s, enrichFile);
 
 		return m;
@@ -432,7 +456,7 @@ public class LimesConfigReader extends ConfigReader implements RDFSpecs{
 				System.exit(1);
 			}
 			String pPrefixUri = m.getNsPrefixMap().get(pPrefix);
-			p = p.replace(":", "").replace(pPrefix, pPrefixUri);
+			p = pPrefixUri + p.substring(p.indexOf(":")+1);
 		}
 		return ResourceFactory.createResource(p);
 	}
@@ -520,7 +544,7 @@ public class LimesConfigReader extends ConfigReader implements RDFSpecs{
 		long starTime = System.currentTimeMillis();
 		FileWriter fileWriter;
 		generateSpecs(specsSourceFolder);
-/*		try {
+		/*		try {
 			logger.info("read file: " + args[0]);
 			String outputFile = args[0].substring(0, args[0].lastIndexOf(".")) + ".ttl";
 			fileWriter = new FileWriter(outputFile);
