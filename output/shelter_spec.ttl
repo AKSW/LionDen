@@ -1,0 +1,70 @@
+@prefix lgdp:    <http://linkedgeodata.org/property/> .
+@prefix lgdo:    <http://linkedgeodata.org/ontology/> .
+@prefix swpo:    <http://sw-portal.deri.org/ontologies/swportal#> .
+@prefix dbpedia-owl:  <http://dbpedia.org/ontology/> .
+@prefix geo:     <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lden:    <www.linklion.org/lden#> .
+@prefix geonames:  <http://www.geonames.org/ontology#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix umbel-sc:  <http://umbel.org/umbel/sc/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix dbpedia:  <http://dbpedia.org/ontology/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix wgs84:   <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix linkedgeodata:  <http://linkedgeodata.org/triplify/> .
+
+<www.linklion.org/lden#/shelter_spec_metric>
+      a       lden:Metric ;
+      lden:expression "average(wgs84(b.wgs84:lat/wgs84:long,a.wgs84:lat/wgs84:long|0.9),max(levenshtein(b.rdfs:label,a.geonames:name|0.9),levenshtein(b.rdfs:label,a.geonames:alternateName|0.9)))" .
+
+<www.linklion.org/lden#/shelter_spec_source>
+      a       lden:SourceDataset ;
+      rdfs:label "geonames" ;
+      lden:endPoint <http://lgd.aksw.org:8900/sparql> ;
+      lden:pageSize "-1"^^xsd:int ;
+      lden:restriction "?a geonames:featureCode geonames:RHSE.  ?a wgs84:lat ?lat. ?a wgs84:long ?long." ;
+      lden:variable "a" .
+
+<www.linklion.org/lden#/shelter_spec_acceptance>
+      a       lden:Acceptance ;
+      lden:file <lgd-geonamesmatching/shelter/verify.nt> ;
+      lden:relation owl:sameAs ;
+      lden:threshold "0.95"^^xsd:double .
+
+<www.linklion.org/lden#/shelter_spec>
+      a       lden:LimesSpecs ;
+      <http://purl.org/dc/terms/created>
+              "2011" ;
+      <http://purl.org/dc/terms/creator>
+              "AKSW" ;
+      <http://purl.org/dc/terms/license>
+              <http://linkedgeodata.org/About> ;
+      <http://purl.org/dc/terms/provenance>
+              "Data are obtained from LinkedGeoData.org that created this linking specification to link linkedgeodata and DBPedia" ;
+      <http://purl.org/dc/terms/publisher>
+              "AKSW" ;
+      swpo:Tool "silk" ;
+      lden:executionPlan "simple" ;
+      lden:granularity "2"^^xsd:int ;
+      lden:hasAcceptance <www.linklion.org/lden#/shelter_spec_acceptance> ;
+      lden:hasMetric <www.linklion.org/lden#/shelter_spec_metric> ;
+      lden:hasReview <www.linklion.org/lden#/shelter_spec_review> ;
+      lden:hasSource <www.linklion.org/lden#/shelter_spec_source> ;
+      lden:hasTarget <www.linklion.org/lden#/shelter_spec_target> ;
+      lden:outputFormat "alignment" .
+
+<www.linklion.org/lden#/shelter_spec_target>
+      a       lden:TargetDataset ;
+      rdfs:label "linkedgeodata" ;
+      lden:endPoint <http://linkedgeodata.org/sparql/> ;
+      lden:pageSize "-1"^^xsd:int ;
+      lden:restriction "?b a lgdo:Shelter.  ?b wgs84:lat ?lat. ?b wgs84:long ?long." ;
+      lden:variable "b" .
+
+<www.linklion.org/lden#/shelter_spec_review>
+      a       lden:Review ;
+      lden:file
+              [] ;
+      lden:relation owl:sameAs ;
+      lden:threshold "0.0"^^xsd:double .

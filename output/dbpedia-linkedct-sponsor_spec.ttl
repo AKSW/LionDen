@@ -1,0 +1,133 @@
+@prefix dgadmingeo:  <http://statistics.data.gov.uk/def/administrative-geography/> .
+@prefix drugbank:  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugbank/> .
+@prefix meshr:   <http://bio2rdf.org/ns/mesh#> .
+@prefix bibliographic:  <http://data.bl.uk/schema/bibliographic#> .
+@prefix loticoowl:  <http://www.lotico.com/ontology/> .
+@prefix airport:  <http://airports.dataincubator.org/schema/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix dbprop:  <http://dbpedia.org/property/> .
+@prefix dbp:     <http://dbpedia.org/property/> .
+@prefix openei:  <http://openei.org/resources/> .
+@prefix stads:   <http://purl.org/collections/nl/stadsarchief/> .
+@prefix factbook:  <http://www4.wiwiss.fu-berlin.de/factbook/ns#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix linkedgeodata:  <http://linkedgeodata.org/triplify/> .
+@prefix sw:      <http://vocab.sciencewise.info/ontology#> .
+@prefix BibTeX:  <http://data.bibbase.org/ontology/#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix swpo:    <http://sw-portal.deri.org/ontologies/swportal#> .
+@prefix dbpedia-owl:  <http://dbpedia.org/ontology/> .
+@prefix ov:      <http://open.vocab.org/terms/> .
+@prefix geo:     <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix linkedmdb:  <http://data.linkedmdb.org/resource/movie/> .
+@prefix yago:    <http://dbpedia.org/class/yago/> .
+@prefix dic:     <http://eurostat.linked-statistics.org/dic/> .
+@prefix administrative-geography:  <http://statistics.data.gov.uk/def/administrative-geography/> .
+@prefix postcode:  <http://data.ordnancesurvey.co.uk/ontology/postcode/> .
+@prefix eures:   <http://www4.wiwiss.fu-berlin.de/eures/resource/eures/> .
+@prefix traffic:  <http://transport.data.gov.uk/def/traffic/> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix wgs84:   <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix stitch:  <http://www4.wiwiss.fu-berlin.de/stitch/resource/stitch/> .
+@prefix redd:    <http://redd.aksw.org:> .
+@prefix eccompetition:  <http://www4.wiwiss.fu-berlin.de/eccompetition/resource/eccompetition/> .
+@prefix scuole:  <http://purl.org/net7/vocab/scuole/> .
+@prefix epo:     <http://epo.publicdata.eu/ebd/ontology/> .
+@prefix opencyc:  <http://sw.opencyc.org/2008/06/10/concept/> .
+@prefix climb:   <http://climb.dataincubator.org/vocabs/climb/> .
+@prefix dbpediaowl:  <http://dbpedia.org/ontology/> .
+@prefix lden:    <www.linklion.org/lden#> .
+@prefix dbpedia-resource:  <http://dbpedia.org/resource/> .
+@prefix hcterms:  <http://purl.org/uF/hCard/terms/> .
+@prefix geonames:  <http://www.geonames.org/ontology#> .
+@prefix euraxess:  <http://www4.wiwiss.fu-berlin.de/euraxess/resource/euraxess/> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bbc-wildlife:  <http://purl.org/ontology/wo/> .
+@prefix gho:     <http://ghodata/> .
+@prefix naptan:  <http://transport.data.gov.uk/def/naptan/> .
+@prefix dbpedia:  <http://dbpedia.org/ontology/> .
+@prefix rail:    <http://ontologi.es/rail/vocab#> .
+@prefix linkedct:  <http://data.linkedct.org/vocab/> .
+@prefix swrc:    <http://swrc.ontoware.org/ontology#> .
+@prefix rmon:    <http://purl.org/collections/nl/rijksmonumenten/> .
+@prefix dbpprop:  <http://dbpedia.org/property/> .
+@prefix admingeo:  <http://data.ordnancesurvey.co.uk/ontology/admingeo/> .
+@prefix lgdp:    <http://linkedgeodata.org/property/> .
+@prefix diseasome:  <http://www4.wiwiss.fu-berlin.de/diseasome/resource/diseasome/> .
+@prefix lgdo:    <http://linkedgeodata.org/ontology/> .
+@prefix metoffice:  <http://metoffice.dataincubator.org/vocabs/metoffice/> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix spatial:  <http://data.ordnancesurvey.co.uk/ontology/spatialrelations/> .
+@prefix whois:   <http://www.kanzaki.com/ns/whois#> .
+@prefix dbpedia-prop:  <http://dbpedia.org/property/> .
+@prefix void:    <http://rdfs.org/ns/void#> .
+@prefix v:       <http://www.w3.org/2006/vcard/ns#> .
+@prefix dbpp:    <http://dbpedia.org/property/> .
+@prefix dctype:  <http://purl.org/dc/dcmitype/> .
+@prefix cordis:  <http://www4.wiwiss.fu-berlin.de/cordis/resource/cordis/> .
+@prefix am:      <http://purl.org/collections/nl/am/> .
+@prefix umbel-sc:  <http://umbel.org/umbel/sc/> .
+@prefix gazetteer:  <http://data.ordnancesurvey.co.uk/ontology/50kGazetteer/> .
+@prefix skos0:   <http://www.w3.org/2004/02/skos#> .
+@prefix akt:     <http://www.aktors.org/ontology/portal#> .
+@prefix bibo:    <http://purl.org/ontology/bibo/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix aiiso:   <http://purl.org/vocab/aiiso/schema#> .
+@prefix yo:      <http://www.yovisto.com/ontology/0.9/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix swc:     <http://data.semanticweb.org/ns/swc/ontology#> .
+@prefix competition:  <http://www4.wiwiss.fu-berlin.de/competition/resource/competition/> .
+
+<www.linklion.org/lden#/dbpedia-linkedct-sponsor_spec_source>
+      a       lden:SourceDataset ;
+      rdfs:label "dbpedia" ;
+      lden:endPoint <http://dbpedia.org/sparql> ;
+      lden:pageSize "-1"^^xsd:int ;
+      lden:restriction "?a rdf:type dbpedia-owl:Organisation ." ;
+      lden:variable "a" .
+
+<www.linklion.org/lden#/dbpedia-linkedct-sponsor_spec_review>
+      a       lden:Review ;
+      lden:file
+              [] ;
+      lden:relation owl:sameAs ;
+      lden:threshold "0.0"^^xsd:double .
+
+<www.linklion.org/lden#/dbpedia-linkedct-sponsor_spec_metric>
+      a       lden:Metric ;
+      lden:expression "max(levenshtein(b.rdfs:label,a.dbpedia:wikiPageRedirects|0.93),levenshtein(b.rdfs:label,a.rdfs:label|0.93))" .
+
+<www.linklion.org/lden#/dbpedia-linkedct-sponsor_spec_acceptance>
+      a       lden:Acceptance ;
+      lden:file <dbpedia-linkedct-sponsor.nt> ;
+      lden:relation owl:sameAs ;
+      lden:threshold "0.96"^^xsd:double .
+
+<www.linklion.org/lden#/dbpedia-linkedct-sponsor_spec_target>
+      a       lden:TargetDataset ;
+      rdfs:label "linkedct" ;
+      lden:endPoint <http://160.45.137.68:3030/uli/query> ;
+      lden:pageSize "-1"^^xsd:int ;
+      lden:restriction "?b rdf:type linkedct:sponsor ." ;
+      lden:variable "b" .
+
+<www.linklion.org/lden#/dbpedia-linkedct-sponsor_spec>
+      a       lden:LimesSpecs ;
+      dcterms:created "2011" ;
+      dcterms:creator "LATC" ;
+      dcterms:license <https://github.com/LATC/sandbox/blob/master/linksets/README> ;
+      dcterms:provenance "Data are obtained from http://aksw.org/Projects/LATC.html" ;
+      dcterms:publisher "AKSW" ;
+      dcterms:source <https://github.com/LATC/sandbox/tree/master/linksets> ;
+      swpo:Tool "silk" ;
+      lden:executionPlan "simple" ;
+      lden:granularity "2"^^xsd:int ;
+      lden:hasAcceptance <www.linklion.org/lden#/dbpedia-linkedct-sponsor_spec_acceptance> ;
+      lden:hasMetric <www.linklion.org/lden#/dbpedia-linkedct-sponsor_spec_metric> ;
+      lden:hasReview <www.linklion.org/lden#/dbpedia-linkedct-sponsor_spec_review> ;
+      lden:hasSource <www.linklion.org/lden#/dbpedia-linkedct-sponsor_spec_source> ;
+      lden:hasTarget <www.linklion.org/lden#/dbpedia-linkedct-sponsor_spec_target> ;
+      lden:outputFormat "ntriples" .
