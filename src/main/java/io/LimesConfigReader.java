@@ -370,7 +370,7 @@ public class LimesConfigReader extends ConfigReader implements RDFSpecs{
 			// dealing with property chain
 			if(p.contains("/")){
 				String[] splits = p.split("/");
-				List<Resource> propChain = new ArrayList<>();
+				List<Resource> propChain = new ArrayList<Resource>();
 				for(String split : splits){
 					propChain.add(createResource(m, split));
 				}
@@ -395,7 +395,7 @@ public class LimesConfigReader extends ConfigReader implements RDFSpecs{
 			// dealing with property chain
 			if(p.contains("/")){
 				String[] splits = p.split("/");
-				List<Resource> propChain = new ArrayList<>();
+				List<Resource> propChain = new ArrayList<Resource>();
 				for(String split : splits){
 					propChain.add(createResource(m, split));
 				}
