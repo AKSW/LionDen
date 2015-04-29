@@ -1,0 +1,28 @@
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix wv: <http://vocab.org/waiver/terms/norms> .        
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix : <www.linklion.org/void#>
+
+<www.linklion.org/void.ttl>
+    a void:DatasetDescription ;
+    dcterms:title "A VoiD Description of the Lion's Den Dataset"@en ;
+    dcterms:creator <http://aksw.org/>.
+:lden
+    a void:Dataset ;
+    foaf:homepage <https://github.com/AKSW/LionDen> ;
+    dcterms:title "Lion's Den"@en ;
+    dcterms:license "Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)"@en ;
+    dcterms:description "An open community-driven RDF repository that allows data publishers to also publish their interlinking schemes."@en ;
+    dcterms:source <https://github.com/LATC/> , <https://github.com/dbpedia/dbpedia-links/> , <http://linkedgeodata.org/>;
+    dcterms:publisher <http://aksw.org/>;
+    void:sparqlEndpoint <http://www.linklion.org:8890/sparql> ;
+    dcterms:date "2015-04-20"^^xsd:date ;
+    void:feature <http://www.w3.org/ns/formats/Turtle>; 
+    void:triples '17650'^^xsd:integer;
+    void:entities '436'^^xsd:integer.

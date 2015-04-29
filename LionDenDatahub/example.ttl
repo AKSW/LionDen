@@ -1,0 +1,16 @@
+<http://lionsden.linklion.org/www.linklion.org/lden#Amazon-GoogleProducts_spec>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://lionsden.linklion.org/www.linklion.org/lden#LimesSpecs> .
+<http://lionsden.linklion.org/www.linklion.org/lden#Amazon-GoogleProducts_spec>	<http://purl.org/dc/terms/created>	"2011" .
+<http://lionsden.linklion.org/www.linklion.org/lden#Amazon-GoogleProducts_spec>	<http://purl.org/dc/terms/license>	<https://www.informatik.uni-leipzig.de/svn/an/devan/LIMES/README> .
+<http://lionsden.linklion.org/www.linklion.org/lden#Amazon-GoogleProducts_spec>	<http://purl.org/dc/terms/creator>	"AKSW"@en .
+<http://lionsden.linklion.org/www.linklion.org/lden#Amazon-GoogleProducts_spec>	<http://purl.org/dc/terms/source>	<https://www.informatik.uni-leipzig.de/svn/an/devan/LIMES> .
+<http://lionsden.linklion.org/www.linklion.org/lden#Amazon-GoogleProducts_spec>	<http://purl.org/dc/terms/publisher>	"AKSW"@en .
+<http://lionsden.linklion.org/www.linklion.org/lden#Amazon-GoogleProducts_spec>	<http://purl.org/dc/terms/provenance>	"Data are obtained from http://aksw.org/Projects/LATC.html" .
+<http://lionsden.linklion.org/www.linklion.org/lden#Amazon-GoogleProducts_spec>	<http://lionsden.linklion.org/www.linklion.org/lden#hasReview>	<http://lionsden.linklion.org/www.linklion.org/lden#Amazon-GoogleProducts_spec_review> .
+<http://lionsden.linklion.org/www.linklion.org/lden#Amazon-GoogleProducts_spec>	<http://sw-portal.deri.org/ontologies/swportal#Tool>	"limes"@en .
+<http://lionsden.linklion.org/www.linklion.org/lden#Amazon-GoogleProducts_spec>	<http://lionsden.linklion.org/www.linklion.org/lden#executionPlan>	"SIMPLE"@en .
+<http://lionsden.linklion.org/www.linklion.org/lden#Amazon-GoogleProducts_spec>	<http://lionsden.linklion.org/www.linklion.org/lden#granularity>	"16"^^<http://www.w3.org/2001/XMLSchema#int> .
+<http://lionsden.linklion.org/www.linklion.org/lden#Amazon-GoogleProducts_spec>	<http://lionsden.linklion.org/www.linklion.org/lden#hasAcceptance>	<http://lionsden.linklion.org/www.linklion.org/lden#Amazon-GoogleProducts_spec_acceptance> .
+<http://lionsden.linklion.org/www.linklion.org/lden#Amazon-GoogleProducts_spec>	<http://lionsden.linklion.org/www.linklion.org/lden#hasMetric>	<http://lionsden.linklion.org/www.linklion.org/lden#Amazon-GoogleProducts_spec_metric> .
+<http://lionsden.linklion.org/www.linklion.org/lden#Amazon-GoogleProducts_spec>	<http://lionsden.linklion.org/www.linklion.org/lden#hasSource>	<http://lionsden.linklion.org/www.linklion.org/lden#Amazon-GoogleProducts_spec_source> .
+<http://lionsden.linklion.org/www.linklion.org/lden#Amazon-GoogleProducts_spec>	<http://lionsden.linklion.org/www.linklion.org/lden#hasTarget>	<http://lionsden.linklion.org/www.linklion.org/lden#Amazon-GoogleProducts_spec_target> .
+<http://lionsden.linklion.org/www.linklion.org/lden#Amazon-GoogleProducts_spec>	<http://lionsden.linklion.org/www.linklion.org/lden#outputFormat>	"N3"@en .
