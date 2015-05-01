@@ -4,7 +4,7 @@
 @prefix dbpedia-owl:  <http://dbpedia.org/ontology/> .
 @prefix geo:     <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix foaf:    <http://xmlns.com/foaf/0.1/> .
-@prefix lden:    <www.linklion.org/lden#> .
+@prefix lden:    <http://www.linklion.org/lden/> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix umbel-sc:  <http://umbel.org/umbel/sc/> .
 @prefix dbpedia:  <http://dbpedia.org/ontology/> .
@@ -14,14 +14,14 @@
 @prefix linkedgeodata:  <http://linkedgeodata.org/triplify/> .
 @prefix dbpprop:  <http://dbpedia.org/property/> .
 
-<www.linklion.org/lden#/dbpedia-linkedgeodata-embassy_review>
+<http://www.linklion.org/lden/dbpedia-linkedgeodata-embassy_review>
       a       lden:Review ;
       lden:file
               [] ;
       lden:relation owl:sameAs ;
       lden:threshold "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 
-<www.linklion.org/lden#/dbpedia-linkedgeodata-embassy_source>
+<http://www.linklion.org/lden/dbpedia-linkedgeodata-embassy_source>
       a       lden:SourceDataset ;
       rdfs:label "geonames" ;
       lden:endPoint
@@ -30,7 +30,7 @@
       lden:restriction "{?a rdf:type lgdo:Embassy}" ;
       lden:variable "a" .
 
-<www.linklion.org/lden#/dbpedia-linkedgeodata-embassy>
+<http://www.linklion.org/lden/dbpedia-linkedgeodata-embassy>
       a       lden:LimesSpecs ;
       <http://purl.org/dc/terms/created>
               "2011" ;
@@ -47,14 +47,14 @@
       swpo:Tool "silk" ;
       lden:executionPlan "simple" ;
       lden:granularity "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
-      lden:hasAcceptance <www.linklion.org/lden#/dbpedia-linkedgeodata-embassy_acceptance> ;
-      lden:hasMetric <www.linklion.org/lden#/dbpedia-linkedgeodata-embassy_metric> ;
-      lden:hasReview <www.linklion.org/lden#/dbpedia-linkedgeodata-embassy_review> ;
-      lden:hasSource <www.linklion.org/lden#/dbpedia-linkedgeodata-embassy_source> ;
-      lden:hasTarget <www.linklion.org/lden#/dbpedia-linkedgeodata-embassy_target> ;
+      lden:hasAcceptance <http://www.linklion.org/lden/dbpedia-linkedgeodata-embassy_acceptance> ;
+      lden:hasMetric <http://www.linklion.org/lden/dbpedia-linkedgeodata-embassy_metric> ;
+      lden:hasReview <http://www.linklion.org/lden/dbpedia-linkedgeodata-embassy_review> ;
+      lden:hasSource <http://www.linklion.org/lden/dbpedia-linkedgeodata-embassy_source> ;
+      lden:hasTarget <http://www.linklion.org/lden/dbpedia-linkedgeodata-embassy_target> ;
       lden:outputFormat "ntriples" .
 
-<www.linklion.org/lden#/dbpedia-linkedgeodata-embassy_target>
+<http://www.linklion.org/lden/dbpedia-linkedgeodata-embassy_target>
       a       lden:TargetDataset ;
       rdfs:label "dbpedia" ;
       lden:endPoint
@@ -63,12 +63,12 @@
       lden:restriction "{?b rdf:type dbpedia-owl:Country}" ;
       lden:variable "b" .
 
-<www.linklion.org/lden#/dbpedia-linkedgeodata-embassy_acceptance>
+<http://www.linklion.org/lden/dbpedia-linkedgeodata-embassy_acceptance>
       a       lden:Acceptance ;
       lden:file <dbpedia-linkedgeodata-mountain_verify.nt> ;
       lden:relation owl:sameAs ;
       lden:threshold "0.95"^^<http://www.w3.org/2001/XMLSchema#double> .
 
-<www.linklion.org/lden#/dbpedia-linkedgeodata-embassy_metric>
+<http://www.linklion.org/lden/dbpedia-linkedgeodata-embassy_metric>
       a       lden:Metric ;
       lden:expression "average(wgs84(b.wgs84:lat/wgs84:long,a.wgs84:lat/wgs84:long|0.9),max(jaro(b.rdfs:label,a.rdfs:label|0.9)))" .

@@ -1,5 +1,5 @@
 @prefix drugbank:  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugbank/> .
-@prefix lden:    <www.linklion.org/lden#> .
+@prefix lden:    <http://www.linklion.org/lden/> .
 @prefix hcterms:  <http://purl.org/uF/hCard/terms/> .
 @prefix geonames:  <http://www.geonames.org/ontology#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
@@ -28,24 +28,24 @@
 @prefix wgs84:   <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 
-<www.linklion.org/lden#/spec_language_review>
+<http://www.linklion.org/lden/spec_language_review>
       a       lden:Review ;
       lden:file
               [] ;
       lden:relation dbpedia-owl:spokenIn ;
       lden:threshold "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 
-<www.linklion.org/lden#/spec_language_metric>
+<http://www.linklion.org/lden/spec_language_metric>
       a       lden:Metric ;
       lden:expression "max(jaro(b.rdfs:label,a.dbpedia-owl:spokenIn|0.90))" .
 
-<www.linklion.org/lden#/spec_language_acceptance>
+<http://www.linklion.org/lden/spec_language_acceptance>
       a       lden:Acceptance ;
       lden:file <factbooklang_links_verify.nt> ;
       lden:relation dbpedia-owl:spokenIn ;
       lden:threshold "0.9"^^<http://www.w3.org/2001/XMLSchema#double> .
 
-<www.linklion.org/lden#/spec_language_target>
+<http://www.linklion.org/lden/spec_language_target>
       a       lden:TargetDataset ;
       rdfs:label "factbook" ;
       lden:endPoint <http://www4.wiwiss.fu-berlin.de/factbook/sparql> ;
@@ -53,7 +53,7 @@
       lden:restriction "?b rdf:type factbook:Country" ;
       lden:variable "b" .
 
-<www.linklion.org/lden#/spec_language>
+<http://www.linklion.org/lden/spec_language>
       a       lden:LimesSpecs ;
       dc:created "2011" ;
       dc:creator "DBPedia" ;
@@ -64,14 +64,14 @@
       swpo:Tool "silk" ;
       lden:executionPlan "simple" ;
       lden:granularity "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
-      lden:hasAcceptance <www.linklion.org/lden#/spec_language_acceptance> ;
-      lden:hasMetric <www.linklion.org/lden#/spec_language_metric> ;
-      lden:hasReview <www.linklion.org/lden#/spec_language_review> ;
-      lden:hasSource <www.linklion.org/lden#/spec_language_source> ;
-      lden:hasTarget <www.linklion.org/lden#/spec_language_target> ;
+      lden:hasAcceptance <http://www.linklion.org/lden/spec_language_acceptance> ;
+      lden:hasMetric <http://www.linklion.org/lden/spec_language_metric> ;
+      lden:hasReview <http://www.linklion.org/lden/spec_language_review> ;
+      lden:hasSource <http://www.linklion.org/lden/spec_language_source> ;
+      lden:hasTarget <http://www.linklion.org/lden/spec_language_target> ;
       lden:outputFormat "alignment" .
 
-<www.linklion.org/lden#/spec_language_source>
+<http://www.linklion.org/lden/spec_language_source>
       a       lden:SourceDataset ;
       rdfs:label "dbpedia" ;
       lden:endPoint <http://dbpedia.org/sparql/> ;

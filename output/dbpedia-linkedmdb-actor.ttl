@@ -1,5 +1,5 @@
 @prefix drugbank:  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugbank/> .
-@prefix lden:    <www.linklion.org/lden#> .
+@prefix lden:    <http://www.linklion.org/lden/> .
 @prefix hcterms:  <http://purl.org/uF/hCard/terms/> .
 @prefix geonames:  <http://www.geonames.org/ontology#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
@@ -28,20 +28,20 @@
 @prefix wgs84:   <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 
-<www.linklion.org/lden#/dbpedia-linkedmdb-actor_review>
+<http://www.linklion.org/lden/dbpedia-linkedmdb-actor_review>
       a       lden:Review ;
       lden:file
               [] ;
       lden:relation owl:sameAs ;
       lden:threshold "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 
-<www.linklion.org/lden#/dbpedia-linkedmdb-actor_acceptance>
+<http://www.linklion.org/lden/dbpedia-linkedmdb-actor_acceptance>
       a       lden:Acceptance ;
       lden:file <dbpedia_linkedmdb_actors.nt> ;
       lden:relation owl:sameAs ;
       lden:threshold "0.98"^^<http://www.w3.org/2001/XMLSchema#double> .
 
-<www.linklion.org/lden#/dbpedia-linkedmdb-actor_source>
+<http://www.linklion.org/lden/dbpedia-linkedmdb-actor_source>
       a       lden:SourceDataset ;
       rdfs:label "dbpedia" ;
       lden:endPoint <http://160.45.137.69:3030/dbpedia/query> ;
@@ -49,7 +49,7 @@
       lden:restriction "?a rdf:type dbpedia-owl:Person" ;
       lden:variable "a" .
 
-<www.linklion.org/lden#/dbpedia-linkedmdb-actor_target>
+<http://www.linklion.org/lden/dbpedia-linkedmdb-actor_target>
       a       lden:TargetDataset ;
       rdfs:label "linkedmdb" ;
       lden:endPoint <http://data.linkedmdb.org/sparql> ;
@@ -57,7 +57,7 @@
       lden:restriction "?b rdf:type linkedmdb:actor" ;
       lden:variable "b" .
 
-<www.linklion.org/lden#/dbpedia-linkedmdb-actor>
+<http://www.linklion.org/lden/dbpedia-linkedmdb-actor>
       a       lden:LimesSpecs ;
       dc:created "2011" ;
       dc:creator "DBPedia" ;
@@ -68,13 +68,13 @@
       swpo:Tool "silk" ;
       lden:executionPlan "simple" ;
       lden:granularity "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
-      lden:hasAcceptance <www.linklion.org/lden#/dbpedia-linkedmdb-actor_acceptance> ;
-      lden:hasMetric <www.linklion.org/lden#/dbpedia-linkedmdb-actor_metric> ;
-      lden:hasReview <www.linklion.org/lden#/dbpedia-linkedmdb-actor_review> ;
-      lden:hasSource <www.linklion.org/lden#/dbpedia-linkedmdb-actor_source> ;
-      lden:hasTarget <www.linklion.org/lden#/dbpedia-linkedmdb-actor_target> ;
+      lden:hasAcceptance <http://www.linklion.org/lden/dbpedia-linkedmdb-actor_acceptance> ;
+      lden:hasMetric <http://www.linklion.org/lden/dbpedia-linkedmdb-actor_metric> ;
+      lden:hasReview <http://www.linklion.org/lden/dbpedia-linkedmdb-actor_review> ;
+      lden:hasSource <http://www.linklion.org/lden/dbpedia-linkedmdb-actor_source> ;
+      lden:hasTarget <http://www.linklion.org/lden/dbpedia-linkedmdb-actor_target> ;
       lden:outputFormat "ntriples" .
 
-<www.linklion.org/lden#/dbpedia-linkedmdb-actor_metric>
+<http://www.linklion.org/lden/dbpedia-linkedmdb-actor_metric>
       a       lden:Metric ;
       lden:expression "average(levenshtein(b.rdfs:label,a.rdfs:label|0.95))" .

@@ -1,6 +1,6 @@
 @prefix eurostat:  <http://www4.wiwiss.fu-berlin.de/eurostat/resource/eurostat/> .
 @prefix drugbank:  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugbank/> .
-@prefix lden:    <www.linklion.org/lden#> .
+@prefix lden:    <http://www.linklion.org/lden/> .
 @prefix dwc:     <http://rs.tdwg.org/dwc/terms/> .
 @prefix hcterms:  <http://purl.org/uF/hCard/terms/> .
 @prefix geonames:  <http://www.geonames.org/ontology#> .
@@ -40,7 +40,7 @@
 @prefix swc:     <http://data.semanticweb.org/ns/swc/ontology#> .
 @prefix geospecies:  <http://rdf.geospecies.org/ont/geospecies#> .
 
-<www.linklion.org/lden#/dbpedia-geonames-airport_source>
+<http://www.linklion.org/lden/dbpedia-geonames-airport_source>
       a       lden:SourceDataset ;
       rdfs:label "dbpedia" ;
       lden:endPoint <http://160.45.137.69:3030/dbpedia/query> ;
@@ -48,14 +48,14 @@
       lden:restriction "{?a rdf:type dbpedia-owl:Airport}." ;
       lden:variable "a" .
 
-<www.linklion.org/lden#/dbpedia-geonames-airport_review>
+<http://www.linklion.org/lden/dbpedia-geonames-airport_review>
       a       lden:Review ;
       lden:file
               [] ;
       lden:relation owl:sameAs ;
       lden:threshold "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 
-<www.linklion.org/lden#/dbpedia-geonames-airport>
+<http://www.linklion.org/lden/dbpedia-geonames-airport>
       a       lden:LimesSpecs ;
       dc:created "2011" ;
       dc:creator "DBPedia" ;
@@ -66,24 +66,24 @@
       swpo:Tool "silk" ;
       lden:executionPlan "simple" ;
       lden:granularity "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
-      lden:hasAcceptance <www.linklion.org/lden#/dbpedia-geonames-airport_acceptance> ;
-      lden:hasMetric <www.linklion.org/lden#/dbpedia-geonames-airport_metric> ;
-      lden:hasReview <www.linklion.org/lden#/dbpedia-geonames-airport_review> ;
-      lden:hasSource <www.linklion.org/lden#/dbpedia-geonames-airport_source> ;
-      lden:hasTarget <www.linklion.org/lden#/dbpedia-geonames-airport_target> ;
+      lden:hasAcceptance <http://www.linklion.org/lden/dbpedia-geonames-airport_acceptance> ;
+      lden:hasMetric <http://www.linklion.org/lden/dbpedia-geonames-airport_metric> ;
+      lden:hasReview <http://www.linklion.org/lden/dbpedia-geonames-airport_review> ;
+      lden:hasSource <http://www.linklion.org/lden/dbpedia-geonames-airport_source> ;
+      lden:hasTarget <http://www.linklion.org/lden/dbpedia-geonames-airport_target> ;
       lden:outputFormat "ntriples" .
 
-<www.linklion.org/lden#/dbpedia-geonames-airport_metric>
+<http://www.linklion.org/lden/dbpedia-geonames-airport_metric>
       a       lden:Metric ;
       lden:expression "average(max(levenshtein(b.geonames:name,a.dbpedia:wikiPageRedirects|0.90),levenshtein(b.geonames:alternateName,a.foaf:name|0.90),levenshtein(b.geonames:name,a.foaf:name|0.90),levenshtein(b.geonames:alternateName,a.rdfs:label|0.90),levenshtein(b.geonames:name,a.rdfs:label|0.90),levenshtein(b.geonames:alternateName,a.dbpedia:wikiPageRedirects|0.90)),max(wgs84(b.wgs84:lat/wgs84:long,a.wgs84:lat/wgs84:long|0.90)))" .
 
-<www.linklion.org/lden#/dbpedia-geonames-airport_acceptance>
+<http://www.linklion.org/lden/dbpedia-geonames-airport_acceptance>
       a       lden:Acceptance ;
       lden:file <dbpedia-geonames-airport.nt> ;
       lden:relation owl:sameAs ;
       lden:threshold "0.92"^^<http://www.w3.org/2001/XMLSchema#double> .
 
-<www.linklion.org/lden#/dbpedia-geonames-airport_target>
+<http://www.linklion.org/lden/dbpedia-geonames-airport_target>
       a       lden:TargetDataset ;
       rdfs:label "geonames" ;
       lden:endPoint <http://160.45.137.69:8890/sparql> ;

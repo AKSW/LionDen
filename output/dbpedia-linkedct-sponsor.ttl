@@ -1,6 +1,6 @@
 @prefix eurostat:  <http://www4.wiwiss.fu-berlin.de/eurostat/resource/eurostat/> .
 @prefix drugbank:  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugbank/> .
-@prefix lden:    <www.linklion.org/lden#> .
+@prefix lden:    <http://www.linklion.org/lden/> .
 @prefix dwc:     <http://rs.tdwg.org/dwc/terms/> .
 @prefix hcterms:  <http://purl.org/uF/hCard/terms/> .
 @prefix geonames:  <http://www.geonames.org/ontology#> .
@@ -40,7 +40,7 @@
 @prefix swc:     <http://data.semanticweb.org/ns/swc/ontology#> .
 @prefix geospecies:  <http://rdf.geospecies.org/ont/geospecies#> .
 
-<www.linklion.org/lden#/dbpedia-linkedct-sponsor_source>
+<http://www.linklion.org/lden/dbpedia-linkedct-sponsor_source>
       a       lden:SourceDataset ;
       rdfs:label "dbpedia" ;
       lden:endPoint <http://160.45.137.69:3030/dbpedia/query> ;
@@ -48,7 +48,7 @@
       lden:restriction "?a rdf:type dbpedia-owl:Organisation ." ;
       lden:variable "a" .
 
-<www.linklion.org/lden#/dbpedia-linkedct-sponsor>
+<http://www.linklion.org/lden/dbpedia-linkedct-sponsor>
       a       lden:LimesSpecs ;
       dc:created "2011" ;
       dc:creator "DBPedia" ;
@@ -59,25 +59,25 @@
       swpo:Tool "silk" ;
       lden:executionPlan "simple" ;
       lden:granularity "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
-      lden:hasAcceptance <www.linklion.org/lden#/dbpedia-linkedct-sponsor_acceptance> ;
-      lden:hasMetric <www.linklion.org/lden#/dbpedia-linkedct-sponsor_metric> ;
-      lden:hasReview <www.linklion.org/lden#/dbpedia-linkedct-sponsor_review> ;
-      lden:hasSource <www.linklion.org/lden#/dbpedia-linkedct-sponsor_source> ;
-      lden:hasTarget <www.linklion.org/lden#/dbpedia-linkedct-sponsor_target> ;
+      lden:hasAcceptance <http://www.linklion.org/lden/dbpedia-linkedct-sponsor_acceptance> ;
+      lden:hasMetric <http://www.linklion.org/lden/dbpedia-linkedct-sponsor_metric> ;
+      lden:hasReview <http://www.linklion.org/lden/dbpedia-linkedct-sponsor_review> ;
+      lden:hasSource <http://www.linklion.org/lden/dbpedia-linkedct-sponsor_source> ;
+      lden:hasTarget <http://www.linklion.org/lden/dbpedia-linkedct-sponsor_target> ;
       lden:outputFormat "ntriples" .
 
-<www.linklion.org/lden#/dbpedia-linkedct-sponsor_metric>
+<http://www.linklion.org/lden/dbpedia-linkedct-sponsor_metric>
       a       lden:Metric ;
       lden:expression "max(levenshtein(b.rdfs:label,a.dbpedia:wikiPageRedirects|0.93),levenshtein(b.rdfs:label,a.rdfs:label|0.93))" .
 
-<www.linklion.org/lden#/dbpedia-linkedct-sponsor_review>
+<http://www.linklion.org/lden/dbpedia-linkedct-sponsor_review>
       a       lden:Review ;
       lden:file
               [] ;
       lden:relation owl:sameAs ;
       lden:threshold "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 
-<www.linklion.org/lden#/dbpedia-linkedct-sponsor_target>
+<http://www.linklion.org/lden/dbpedia-linkedct-sponsor_target>
       a       lden:TargetDataset ;
       rdfs:label "linkedct" ;
       lden:endPoint <http://160.45.137.68:3030/uli/query> ;
@@ -85,7 +85,7 @@
       lden:restriction "?b rdf:type linkedct:sponsor ." ;
       lden:variable "b" .
 
-<www.linklion.org/lden#/dbpedia-linkedct-sponsor_acceptance>
+<http://www.linklion.org/lden/dbpedia-linkedct-sponsor_acceptance>
       a       lden:Acceptance ;
       lden:file <dbpedia-linkedct-sponsor.nt> ;
       lden:relation owl:sameAs ;

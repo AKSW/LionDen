@@ -4,7 +4,7 @@
 @prefix dbpedia-owl:  <http://dbpedia.org/ontology/> .
 @prefix geo:     <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix foaf:    <http://xmlns.com/foaf/0.1/> .
-@prefix lden:    <www.linklion.org/lden#> .
+@prefix lden:    <http://www.linklion.org/lden/> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix umbel-sc:  <http://umbel.org/umbel/sc/> .
 @prefix dbpedia:  <http://dbpedia.org/ontology/> .
@@ -12,7 +12,7 @@
 @prefix wgs84:   <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix linkedgeodata:  <http://linkedgeodata.org/triplify/> .
 
-<www.linklion.org/lden#/dbpedia-linkedgeodata-stadium_source>
+<http://www.linklion.org/lden/dbpedia-linkedgeodata-stadium_source>
       a       lden:SourceDataset ;
       rdfs:label "dbpedia" ;
       lden:endPoint <http://160.45.137.69:3030/dbpedia/query> ;
@@ -20,14 +20,14 @@
       lden:restriction "?a a dbpedia-owl:Stadium.  ?a wgs84:lat ?lat. ?a wgs84:long ?long." ;
       lden:variable "a" .
 
-<www.linklion.org/lden#/dbpedia-linkedgeodata-stadium_review>
+<http://www.linklion.org/lden/dbpedia-linkedgeodata-stadium_review>
       a       lden:Review ;
       lden:file
               [] ;
       lden:relation owl:sameAs ;
       lden:threshold "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 
-<www.linklion.org/lden#/dbpedia-linkedgeodata-stadium>
+<http://www.linklion.org/lden/dbpedia-linkedgeodata-stadium>
       a       lden:LimesSpecs ;
       <http://purl.org/dc/terms/created>
               "2011" ;
@@ -44,20 +44,20 @@
       swpo:Tool "silk" ;
       lden:executionPlan "simple" ;
       lden:granularity "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
-      lden:hasAcceptance <www.linklion.org/lden#/dbpedia-linkedgeodata-stadium_acceptance> ;
-      lden:hasMetric <www.linklion.org/lden#/dbpedia-linkedgeodata-stadium_metric> ;
-      lden:hasReview <www.linklion.org/lden#/dbpedia-linkedgeodata-stadium_review> ;
-      lden:hasSource <www.linklion.org/lden#/dbpedia-linkedgeodata-stadium_source> ;
-      lden:hasTarget <www.linklion.org/lden#/dbpedia-linkedgeodata-stadium_target> ;
+      lden:hasAcceptance <http://www.linklion.org/lden/dbpedia-linkedgeodata-stadium_acceptance> ;
+      lden:hasMetric <http://www.linklion.org/lden/dbpedia-linkedgeodata-stadium_metric> ;
+      lden:hasReview <http://www.linklion.org/lden/dbpedia-linkedgeodata-stadium_review> ;
+      lden:hasSource <http://www.linklion.org/lden/dbpedia-linkedgeodata-stadium_source> ;
+      lden:hasTarget <http://www.linklion.org/lden/dbpedia-linkedgeodata-stadium_target> ;
       lden:outputFormat "ntriples" .
 
-<www.linklion.org/lden#/dbpedia-linkedgeodata-stadium_acceptance>
+<http://www.linklion.org/lden/dbpedia-linkedgeodata-stadium_acceptance>
       a       lden:Acceptance ;
       lden:file <1301310200652/stadium/links_verify.nt> ;
       lden:relation owl:sameAs ;
       lden:threshold "0.95"^^<http://www.w3.org/2001/XMLSchema#double> .
 
-<www.linklion.org/lden#/dbpedia-linkedgeodata-stadium_target>
+<http://www.linklion.org/lden/dbpedia-linkedgeodata-stadium_target>
       a       lden:TargetDataset ;
       rdfs:label "linkedgeodata" ;
       lden:endPoint <http://linkedgeodata.org/sparql/> ;
@@ -65,6 +65,6 @@
       lden:restriction "?b a lgdo:Stadium.  ?b wgs84:lat ?lat. ?b wgs84:long ?long." ;
       lden:variable "b" .
 
-<www.linklion.org/lden#/dbpedia-linkedgeodata-stadium_metric>
+<http://www.linklion.org/lden/dbpedia-linkedgeodata-stadium_metric>
       a       lden:Metric ;
       lden:expression "average(wgs84(b.wgs84:lat/wgs84:long,a.wgs84:lat/wgs84:long|0.9),max(jaro(b.rdfs:label,a.rdfs:label|0.9)))" .

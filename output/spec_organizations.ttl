@@ -1,5 +1,5 @@
 @prefix drugbank:  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugbank/> .
-@prefix lden:    <www.linklion.org/lden#> .
+@prefix lden:    <http://www.linklion.org/lden/> .
 @prefix dwc:     <http://rs.tdwg.org/dwc/terms/> .
 @prefix hcterms:  <http://purl.org/uF/hCard/terms/> .
 @prefix geonames:  <http://www.geonames.org/ontology#> .
@@ -32,7 +32,7 @@
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix geospecies:  <http://rdf.geospecies.org/ont/geospecies#> .
 
-<www.linklion.org/lden#/spec_organizations_target>
+<http://www.linklion.org/lden/spec_organizations_target>
       a       lden:TargetDataset ;
       rdfs:label "Dailymed" ;
       lden:endPoint <http://www4.wiwiss.fu-berlin.de/dailymed/sparql> ;
@@ -40,17 +40,17 @@
       lden:restriction "?b rdf:type dailymed:Organization" ;
       lden:variable "b" .
 
-<www.linklion.org/lden#/spec_organizations_acceptance>
+<http://www.linklion.org/lden/spec_organizations_acceptance>
       a       lden:Acceptance ;
       lden:file <dailymed_dbpedia_organizations.nt> ;
       lden:relation owl:sameAs ;
       lden:threshold "0.98"^^<http://www.w3.org/2001/XMLSchema#double> .
 
-<www.linklion.org/lden#/spec_organizations_metric>
+<http://www.linklion.org/lden/spec_organizations_metric>
       a       lden:Metric ;
       lden:expression "max(jaro(b.rdfs:label,a.dbpedia-prop:wikiPageRedirects|0.95),jaroWinkler(b.rdfs:label,a.rdfs:label|0.95))" .
 
-<www.linklion.org/lden#/spec_organizations>
+<http://www.linklion.org/lden/spec_organizations>
       a       lden:LimesSpecs ;
       dc:created "2011" ;
       dc:creator "DBPedia" ;
@@ -61,14 +61,14 @@
       swpo:Tool "silk" ;
       lden:executionPlan "simple" ;
       lden:granularity "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
-      lden:hasAcceptance <www.linklion.org/lden#/spec_organizations_acceptance> ;
-      lden:hasMetric <www.linklion.org/lden#/spec_organizations_metric> ;
-      lden:hasReview <www.linklion.org/lden#/spec_organizations_review> ;
-      lden:hasSource <www.linklion.org/lden#/spec_organizations_source> ;
-      lden:hasTarget <www.linklion.org/lden#/spec_organizations_target> ;
+      lden:hasAcceptance <http://www.linklion.org/lden/spec_organizations_acceptance> ;
+      lden:hasMetric <http://www.linklion.org/lden/spec_organizations_metric> ;
+      lden:hasReview <http://www.linklion.org/lden/spec_organizations_review> ;
+      lden:hasSource <http://www.linklion.org/lden/spec_organizations_source> ;
+      lden:hasTarget <http://www.linklion.org/lden/spec_organizations_target> ;
       lden:outputFormat "ntriples" .
 
-<www.linklion.org/lden#/spec_organizations_source>
+<http://www.linklion.org/lden/spec_organizations_source>
       a       lden:SourceDataset ;
       rdfs:label "DBpedia" ;
       lden:endPoint <http://dbpedia.org/sparql> ;
@@ -76,7 +76,7 @@
       lden:restriction "?a rdf:type dbpedia-owl:Organisation" ;
       lden:variable "a" .
 
-<www.linklion.org/lden#/spec_organizations_review>
+<http://www.linklion.org/lden/spec_organizations_review>
       a       lden:Review ;
       lden:file
               [] ;

@@ -38,7 +38,7 @@
 @prefix opencyc:  <http://sw.opencyc.org/2008/06/10/concept/> .
 @prefix climb:   <http://climb.dataincubator.org/vocabs/climb/> .
 @prefix dbpediaowl:  <http://dbpedia.org/ontology/> .
-@prefix lden:    <www.linklion.org/lden#> .
+@prefix lden:    <http://www.linklion.org/lden/> .
 @prefix dbpedia-resource:  <http://dbpedia.org/resource/> .
 @prefix hcterms:  <http://purl.org/uF/hCard/terms/> .
 @prefix geonames:  <http://www.geonames.org/ontology#> .
@@ -82,11 +82,11 @@
 @prefix swc:     <http://data.semanticweb.org/ns/swc/ontology#> .
 @prefix competition:  <http://www4.wiwiss.fu-berlin.de/competition/resource/competition/> .
 
-<www.linklion.org/lden#/rail-geonames-ukplaces_spec_metric>
+<http://www.linklion.org/lden/rail-geonames-ukplaces_spec_metric>
       a       lden:Metric ;
       lden:expression "average(wgs84(b.geo:lat/geo:long,a.geo:lat/geo:long|0.95))" .
 
-<www.linklion.org/lden#/rail-geonames-ukplaces_spec_target>
+<http://www.linklion.org/lden/rail-geonames-ukplaces_spec_target>
       a       lden:TargetDataset ;
       rdfs:label "geonames-semantic-web" ;
       lden:endPoint <http://api.talis.com/stores/geonames/services/sparql> ;
@@ -94,20 +94,20 @@
       lden:restriction "?b geonames:inCountry <http://www.geonames.org/countries/#GB> ." ;
       lden:variable "b" .
 
-<www.linklion.org/lden#/rail-geonames-ukplaces_spec_review>
+<http://www.linklion.org/lden/rail-geonames-ukplaces_spec_review>
       a       lden:Review ;
       lden:file
               [] ;
       lden:relation ov:near ;
       lden:threshold "0.0"^^xsd:double .
 
-<www.linklion.org/lden#/rail-geonames-ukplaces_spec_acceptance>
+<http://www.linklion.org/lden/rail-geonames-ukplaces_spec_acceptance>
       a       lden:Acceptance ;
       lden:file <rail_geonames_ukplaces.nt> ;
       lden:relation ov:near ;
       lden:threshold "0.98"^^xsd:double .
 
-<www.linklion.org/lden#/rail-geonames-ukplaces_spec>
+<http://www.linklion.org/lden/rail-geonames-ukplaces_spec>
       a       lden:LimesSpecs ;
       dcterms:created "2011" ;
       dcterms:creator "LATC" ;
@@ -118,14 +118,14 @@
       swpo:Tool "silk" ;
       lden:executionPlan "simple" ;
       lden:granularity "2"^^xsd:int ;
-      lden:hasAcceptance <www.linklion.org/lden#/rail-geonames-ukplaces_spec_acceptance> ;
-      lden:hasMetric <www.linklion.org/lden#/rail-geonames-ukplaces_spec_metric> ;
-      lden:hasReview <www.linklion.org/lden#/rail-geonames-ukplaces_spec_review> ;
-      lden:hasSource <www.linklion.org/lden#/rail-geonames-ukplaces_spec_source> ;
-      lden:hasTarget <www.linklion.org/lden#/rail-geonames-ukplaces_spec_target> ;
+      lden:hasAcceptance <http://www.linklion.org/lden/rail-geonames-ukplaces_spec_acceptance> ;
+      lden:hasMetric <http://www.linklion.org/lden/rail-geonames-ukplaces_spec_metric> ;
+      lden:hasReview <http://www.linklion.org/lden/rail-geonames-ukplaces_spec_review> ;
+      lden:hasSource <http://www.linklion.org/lden/rail-geonames-ukplaces_spec_source> ;
+      lden:hasTarget <http://www.linklion.org/lden/rail-geonames-ukplaces_spec_target> ;
       lden:outputFormat "ntriples" .
 
-<www.linklion.org/lden#/rail-geonames-ukplaces_spec_source>
+<http://www.linklion.org/lden/rail-geonames-ukplaces_spec_source>
       a       lden:SourceDataset ;
       rdfs:label "linked-railway-data-project" ;
       lden:endPoint <http://sparql.sindice.com/sparql> ;

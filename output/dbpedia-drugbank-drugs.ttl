@@ -1,5 +1,5 @@
 @prefix drugbank:  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugbank/> .
-@prefix lden:    <www.linklion.org/lden#> .
+@prefix lden:    <http://www.linklion.org/lden/> .
 @prefix hcterms:  <http://purl.org/uF/hCard/terms/> .
 @prefix geonames:  <http://www.geonames.org/ontology#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
@@ -27,7 +27,7 @@
 @prefix wgs84:   <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 
-<www.linklion.org/lden#/dbpedia-drugbank-drugs>
+<http://www.linklion.org/lden/dbpedia-drugbank-drugs>
       a       lden:LimesSpecs ;
       dc:created "2011" ;
       dc:creator "DBPedia" ;
@@ -38,27 +38,27 @@
       swpo:Tool "silk" ;
       lden:executionPlan "simple" ;
       lden:granularity "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
-      lden:hasAcceptance <www.linklion.org/lden#/dbpedia-drugbank-drugs_acceptance> ;
-      lden:hasMetric <www.linklion.org/lden#/dbpedia-drugbank-drugs_metric> ;
-      lden:hasReview <www.linklion.org/lden#/dbpedia-drugbank-drugs_review> ;
-      lden:hasSource <www.linklion.org/lden#/dbpedia-drugbank-drugs_source> ;
-      lden:hasTarget <www.linklion.org/lden#/dbpedia-drugbank-drugs_target> ;
+      lden:hasAcceptance <http://www.linklion.org/lden/dbpedia-drugbank-drugs_acceptance> ;
+      lden:hasMetric <http://www.linklion.org/lden/dbpedia-drugbank-drugs_metric> ;
+      lden:hasReview <http://www.linklion.org/lden/dbpedia-drugbank-drugs_review> ;
+      lden:hasSource <http://www.linklion.org/lden/dbpedia-drugbank-drugs_source> ;
+      lden:hasTarget <http://www.linklion.org/lden/dbpedia-drugbank-drugs_target> ;
       lden:outputFormat "ntriples" .
 
-<www.linklion.org/lden#/dbpedia-drugbank-drugs_acceptance>
+<http://www.linklion.org/lden/dbpedia-drugbank-drugs_acceptance>
       a       lden:Acceptance ;
       lden:file <dbpedia-drugbank-drug.nt> ;
       lden:relation owl:sameAs ;
       lden:threshold "0.92"^^<http://www.w3.org/2001/XMLSchema#double> .
 
-<www.linklion.org/lden#/dbpedia-drugbank-drugs_review>
+<http://www.linklion.org/lden/dbpedia-drugbank-drugs_review>
       a       lden:Review ;
       lden:file
               [] ;
       lden:relation owl:sameAs ;
       lden:threshold "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 
-<www.linklion.org/lden#/dbpedia-drugbank-drugs_target>
+<http://www.linklion.org/lden/dbpedia-drugbank-drugs_target>
       a       lden:TargetDataset ;
       rdfs:label "drugbank" ;
       lden:endPoint <http://www4.wiwiss.fu-berlin.de/drugbank/sparql> ;
@@ -66,11 +66,11 @@
       lden:restriction "?b rdf:type drugbank:drugs" ;
       lden:variable "b" .
 
-<www.linklion.org/lden#/dbpedia-drugbank-drugs_metric>
+<http://www.linklion.org/lden/dbpedia-drugbank-drugs_metric>
       a       lden:Metric ;
       lden:expression "max(levenshtein(b.rdfs:label,a.dbpedia:wikiPageRedirects|0.90),levenshtein(b.rdfs:label,a.foaf:name|0.90),levenshtein(b.rdfs:label,a.rdfs:label|0.90),levenshtein(b.drugbank:genericName,a.dbpedia:wikiPageRedirects|0.90),levenshtein(b.drugbank:genericName,a.foaf:name|0.90),levenshtein(b.drugbank:genericName,a.rdfs:label|0.90))" .
 
-<www.linklion.org/lden#/dbpedia-drugbank-drugs_source>
+<http://www.linklion.org/lden/dbpedia-drugbank-drugs_source>
       a       lden:SourceDataset ;
       rdfs:label "dbpedia" ;
       lden:endPoint <http://160.45.137.69:3030/dbpedia/query> ;

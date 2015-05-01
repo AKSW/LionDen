@@ -1,6 +1,6 @@
 @prefix eurostat:  <http://www4.wiwiss.fu-berlin.de/eurostat/resource/eurostat/> .
 @prefix drugbank:  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugbank/> .
-@prefix lden:    <www.linklion.org/lden#> .
+@prefix lden:    <http://www.linklion.org/lden/> .
 @prefix dwc:     <http://rs.tdwg.org/dwc/terms/> .
 @prefix hcterms:  <http://purl.org/uF/hCard/terms/> .
 @prefix geonames:  <http://www.geonames.org/ontology#> .
@@ -40,24 +40,24 @@
 @prefix swc:     <http://data.semanticweb.org/ns/swc/ontology#> .
 @prefix geospecies:  <http://rdf.geospecies.org/ont/geospecies#> .
 
-<www.linklion.org/lden#/dbpedia-geonames-lake_metric>
+<http://www.linklion.org/lden/dbpedia-geonames-lake_metric>
       a       lden:Metric ;
       lden:expression "average(max(levenshtein(b.geonames:alternateName,a.foaf:name|0.90),levenshtein(b.geonames:name,a.foaf:name|0.90),levenshtein(b.geonames:name,a.dbpedia-prop:name|0.90),levenshtein(b.geonames:alternateName,a.dbpedia-prop:name|0.90),levenshtein(b.geonames:name,a.rdfs:label|0.90),levenshtein(b.geonames:alternateName,a.rdfs:label|0.90),levenshtein(b.geonames:name,a.dbpedia:wikiPageRedirects|0.90),levenshtein(b.geonames:alternateName,a.dbpedia:wikiPageRedirects|0.90)),max(wgs84(b.wgs84:lat/wgs84:long,a.wgs84:lat/wgs84:long|0.90)))" .
 
-<www.linklion.org/lden#/dbpedia-geonames-lake_review>
+<http://www.linklion.org/lden/dbpedia-geonames-lake_review>
       a       lden:Review ;
       lden:file
               [] ;
       lden:relation owl:sameAs ;
       lden:threshold "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 
-<www.linklion.org/lden#/dbpedia-geonames-lake_acceptance>
+<http://www.linklion.org/lden/dbpedia-geonames-lake_acceptance>
       a       lden:Acceptance ;
       lden:file <dbpedia-geonames-lake.nt> ;
       lden:relation owl:sameAs ;
       lden:threshold "0.92"^^<http://www.w3.org/2001/XMLSchema#double> .
 
-<www.linklion.org/lden#/dbpedia-geonames-lake_source>
+<http://www.linklion.org/lden/dbpedia-geonames-lake_source>
       a       lden:SourceDataset ;
       rdfs:label "dbpedia" ;
       lden:endPoint <http://160.45.137.69:3030/sparql> ;
@@ -65,7 +65,7 @@
       lden:restriction "?a a dbpedia-owl:Lake." ;
       lden:variable "a" .
 
-<www.linklion.org/lden#/dbpedia-geonames-lake_target>
+<http://www.linklion.org/lden/dbpedia-geonames-lake_target>
       a       lden:TargetDataset ;
       rdfs:label "geonames" ;
       lden:endPoint <http://160.45.137.69:8890/sparql> ;
@@ -73,7 +73,7 @@
       lden:restriction "{?b geonames:featureCode geonames:LK} UNION  {?b geonames:featureCode geonames:LKC} UNION  {?b geonames:featureCode geonames:LKI} UNION  {?b geonames:featureCode geonames:LKN} UNION  {?b geonames:featureCode geonames:LKNI} UNION  {?b geonames:featureCode geonames:LKO} UNION  {?b geonames:featureCode geonames:LKS}" ;
       lden:variable "b" .
 
-<www.linklion.org/lden#/dbpedia-geonames-lake>
+<http://www.linklion.org/lden/dbpedia-geonames-lake>
       a       lden:LimesSpecs ;
       dc:created "2011" ;
       dc:creator "DBPedia" ;
@@ -84,9 +84,9 @@
       swpo:Tool "silk" ;
       lden:executionPlan "simple" ;
       lden:granularity "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
-      lden:hasAcceptance <www.linklion.org/lden#/dbpedia-geonames-lake_acceptance> ;
-      lden:hasMetric <www.linklion.org/lden#/dbpedia-geonames-lake_metric> ;
-      lden:hasReview <www.linklion.org/lden#/dbpedia-geonames-lake_review> ;
-      lden:hasSource <www.linklion.org/lden#/dbpedia-geonames-lake_source> ;
-      lden:hasTarget <www.linklion.org/lden#/dbpedia-geonames-lake_target> ;
+      lden:hasAcceptance <http://www.linklion.org/lden/dbpedia-geonames-lake_acceptance> ;
+      lden:hasMetric <http://www.linklion.org/lden/dbpedia-geonames-lake_metric> ;
+      lden:hasReview <http://www.linklion.org/lden/dbpedia-geonames-lake_review> ;
+      lden:hasSource <http://www.linklion.org/lden/dbpedia-geonames-lake_source> ;
+      lden:hasTarget <http://www.linklion.org/lden/dbpedia-geonames-lake_target> ;
       lden:outputFormat "ntriples" .

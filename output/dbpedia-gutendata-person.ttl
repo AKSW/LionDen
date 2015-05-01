@@ -1,5 +1,5 @@
 @prefix drugbank:  <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugbank/> .
-@prefix lden:    <www.linklion.org/lden#> .
+@prefix lden:    <http://www.linklion.org/lden/> .
 @prefix hcterms:  <http://purl.org/uF/hCard/terms/> .
 @prefix geonames:  <http://www.geonames.org/ontology#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
@@ -28,13 +28,13 @@
 @prefix wgs84:   <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 
-<www.linklion.org/lden#/dbpedia-gutendata-person_acceptance>
+<http://www.linklion.org/lden/dbpedia-gutendata-person_acceptance>
       a       lden:Acceptance ;
       lden:file <dbpedia-gutendata-person.nt> ;
       lden:relation owl:sameAs ;
       lden:threshold "0.95"^^<http://www.w3.org/2001/XMLSchema#double> .
 
-<www.linklion.org/lden#/dbpedia-gutendata-person_target>
+<http://www.linklion.org/lden/dbpedia-gutendata-person_target>
       a       lden:TargetDataset ;
       rdfs:label "gutendata" ;
       lden:endPoint <http://www4.wiwiss.fu-berlin.de/gutendata/sparql> ;
@@ -42,7 +42,7 @@
       lden:restriction "?b rdf:type foaf:Person." ;
       lden:variable "b" .
 
-<www.linklion.org/lden#/dbpedia-gutendata-person>
+<http://www.linklion.org/lden/dbpedia-gutendata-person>
       a       lden:LimesSpecs ;
       dc:created "2011" ;
       dc:creator "DBPedia" ;
@@ -53,14 +53,14 @@
       swpo:Tool "silk" ;
       lden:executionPlan "simple" ;
       lden:granularity "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
-      lden:hasAcceptance <www.linklion.org/lden#/dbpedia-gutendata-person_acceptance> ;
-      lden:hasMetric <www.linklion.org/lden#/dbpedia-gutendata-person_metric> ;
-      lden:hasReview <www.linklion.org/lden#/dbpedia-gutendata-person_review> ;
-      lden:hasSource <www.linklion.org/lden#/dbpedia-gutendata-person_source> ;
-      lden:hasTarget <www.linklion.org/lden#/dbpedia-gutendata-person_target> ;
+      lden:hasAcceptance <http://www.linklion.org/lden/dbpedia-gutendata-person_acceptance> ;
+      lden:hasMetric <http://www.linklion.org/lden/dbpedia-gutendata-person_metric> ;
+      lden:hasReview <http://www.linklion.org/lden/dbpedia-gutendata-person_review> ;
+      lden:hasSource <http://www.linklion.org/lden/dbpedia-gutendata-person_source> ;
+      lden:hasTarget <http://www.linklion.org/lden/dbpedia-gutendata-person_target> ;
       lden:outputFormat "ntriples" .
 
-<www.linklion.org/lden#/dbpedia-gutendata-person_source>
+<http://www.linklion.org/lden/dbpedia-gutendata-person_source>
       a       lden:SourceDataset ;
       rdfs:label "dbpedia" ;
       lden:endPoint <http://160.45.137.69:3030/dbpedia/query> ;
@@ -68,11 +68,11 @@
       lden:restriction "{?a rdf:type dbpedia-owl:Person} UNION {?a rdf:type foaf:Person}." ;
       lden:variable "a" .
 
-<www.linklion.org/lden#/dbpedia-gutendata-person_metric>
+<http://www.linklion.org/lden/dbpedia-gutendata-person_metric>
       a       lden:Metric ;
       lden:expression "average(max(levenshtein(b.foaf:name,a.dbpedia-prop:name|0.90)),max(levenshtein(b.foaf:name,a.dbpedia:birthDate|0.90),levenshtein(b.foaf:name,a.dbpedia-prop:born|0.90),levenshtein(b.foaf:name,a.dbpedia-prop:dateOfBirth|0.90),levenshtein(b.foaf:name,a.dbpedia:deathDate|0.90),levenshtein(b.foaf:name,a.dbpedia-prop:dateOfDeath|0.90),levenshtein(b.foaf:name,a.dbpedia-prop:died|0.90)))" .
 
-<www.linklion.org/lden#/dbpedia-gutendata-person_review>
+<http://www.linklion.org/lden/dbpedia-gutendata-person_review>
       a       lden:Review ;
       lden:file
               [] ;

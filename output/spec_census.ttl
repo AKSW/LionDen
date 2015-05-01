@@ -7,7 +7,7 @@
 @prefix mo:      <http://purl.org/ontology/mo/> .
 @prefix foaf:    <http://xmlns.com/foaf/0.1/> .
 @prefix linkedmdb:  <http://data.linkedmdb.org/resource/movie/> .
-@prefix lden:    <www.linklion.org/lden#> .
+@prefix lden:    <http://www.linklion.org/lden/> .
 @prefix dbpedia-prop:  <http://dbpedia.org/property/> .
 @prefix yago:    <http://dbpedia.org/class/yago/> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
@@ -21,7 +21,7 @@
 @prefix dbpprop:  <http://dbpedia.org/property/> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 
-<www.linklion.org/lden#/spec_census_source>
+<http://www.linklion.org/lden/spec_census_source>
       a       lden:SourceDataset ;
       rdfs:label "dbpedia" ;
       lden:endPoint <http://dbpedia.org/sparql> ;
@@ -29,14 +29,14 @@
       lden:restriction "?a dbpedia-prop:wikiPageUsesTemplate <http://dbpedia.org/resource/Template:Infobox_Settlement>" ;
       lden:variable "a" .
 
-<www.linklion.org/lden#/spec_census_review>
+<http://www.linklion.org/lden/spec_census_review>
       a       lden:Review ;
       lden:file
               [] ;
       lden:relation owl:sameAs ;
       lden:threshold "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 
-<www.linklion.org/lden#/spec_census_target>
+<http://www.linklion.org/lden/spec_census_target>
       a       lden:TargetDataset ;
       rdfs:label "Census" ;
       lden:endPoint <http://www.rdfabout.com/sparql> ;
@@ -44,13 +44,13 @@
       lden:restriction "?b rdf:type usgov:County" ;
       lden:variable "b" .
 
-<www.linklion.org/lden#/spec_census_acceptance>
+<http://www.linklion.org/lden/spec_census_acceptance>
       a       lden:Acceptance ;
       lden:file <> ;
       lden:relation owl:sameAs ;
       lden:threshold "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 
-<www.linklion.org/lden#/spec_census>
+<http://www.linklion.org/lden/spec_census>
       a       lden:LimesSpecs ;
       dc:created "2011" ;
       dc:creator "DBPedia" ;
@@ -61,13 +61,13 @@
       swpo:Tool "silk" ;
       lden:executionPlan "simple" ;
       lden:granularity "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
-      lden:hasAcceptance <www.linklion.org/lden#/spec_census_acceptance> ;
-      lden:hasMetric <www.linklion.org/lden#/spec_census_metric> ;
-      lden:hasReview <www.linklion.org/lden#/spec_census_review> ;
-      lden:hasSource <www.linklion.org/lden#/spec_census_source> ;
-      lden:hasTarget <www.linklion.org/lden#/spec_census_target> ;
+      lden:hasAcceptance <http://www.linklion.org/lden/spec_census_acceptance> ;
+      lden:hasMetric <http://www.linklion.org/lden/spec_census_metric> ;
+      lden:hasReview <http://www.linklion.org/lden/spec_census_review> ;
+      lden:hasSource <http://www.linklion.org/lden/spec_census_source> ;
+      lden:hasTarget <http://www.linklion.org/lden/spec_census_target> ;
       lden:outputFormat "" .
 
-<www.linklion.org/lden#/spec_census_metric>
+<http://www.linklion.org/lden/spec_census_metric>
       a       lden:Metric ;
       lden:expression "average(wgs84(b.wgs84:lat/wgs84:long,a.wgs84:lat/wgs84:long|0.9),max(jaro(b.rdfs:label,a.rdfs:label|0.9)))" .
