@@ -7,75 +7,74 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix lden: <http://www.linklion.org/lden/> .
-@prefix qrn: <http://mlode.nlp2rdf.org/semanticquran/> .
 @prefix gold: <http://purl.org/linguistics/gold/> .
 
-<http://www.nlp2rdf.org/quranvocab#>
+<http://www.linklion.org/lden/>
     dc:title "The Link Specification Ontology"@en  ;
     a owl:Ontology ;
     rdfs:comment "This ontology partially describes classes and  properties that together form the basis of link specifications dataset."@en  ;
-    owl:versionIRI <http://www.nlp2rdf.org/quranvocab#> .
+    owl:versionIRI <http://www.linklion.org/lden/> .
 
 lden:LinkSpecs
     a rdfs:Class ;
     rdfs:comment "The class of a link specification."@en  ;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "Link Specification"@en  ;
     rdfs:subClassOf rdfs:Resource .
 
 lden:LimesSpecs
     a rdfs:Class ;
     rdfs:comment "The class of a link specification for LIMES."@en  ;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "LIMES Link Specification"@en  ;
     rdfs:subClassOf lden:LinkSpec,rdfs:Resource .
 
 lden:SilkSpecs
     a rdfs:Class ;
     rdfs:comment "The class of a link specification for SILK."@en  ;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "Silk Link Specification"@en  ;
     rdfs:subClassOf lden:LinkSpec, rdfs:Resource .
 
 lden:DataSet
     a rdfs:Class ;
     rdfs:comment "The class of the dataset used by link specification."@en  ;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "Dataset"@en  ;
     rdfs:subClassOf rdfs:Resource .
 
 lden:SourceDataset
     a rdfs:Class ;
     rdfs:comment "The class of the source dataset used by link specification in linking process."@en  ;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "Source Dataset"@en  ;
     rdfs:subClassOf lden:DataSet,rdfs:Resource .
 
 lden:TargetDataset
     a rdfs:Class ;
     rdfs:comment "The class of the target dataset used by link specification in linking process."@en  ;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "Target Dataset"@en  ;
     rdfs:subClassOf lden:DataSet,rdfs:Resource .
 
 lden:Metric
     a rdfs:Class ;
     rdfs:comment "The class of the metric expression used in the link specification. This includes similarity functions applied to different resource properties in combination with similarities thresholds"@en;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "Metric"@en  ;
     rdfs:subClassOf rdfs:Resource .
 
 lden:Acceptance
     a rdfs:Class ;
     rdfs:comment "The class of acceptance status including threshold, file and acceptance relation."@en ;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "Acceptance"@en ;
     rdfs:subClassOf rdfs:Resource.
 
 lden:Review
     a rdfs:Class ;
     rdfs:comment "The class of review status including threshold, file and review relation."@en ;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "Review"@en ;
     rdfs:subClassOf rdfs:Resource.
 
@@ -83,7 +82,7 @@ lden:hasSource
     a rdf:Property ;
     rdfs:comment "The property that determines the source dataset used by the link specification."@en  ;
     rdfs:domain lden:LimesSpecs;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "hasSource"@en  ;
     rdfs:range lden:SourceDataset .
 
@@ -91,7 +90,7 @@ lden:hasTarget
     a rdf:Property ;
     rdfs:comment "The property that determines the target dataset used by the link specification."@en  ;
     rdfs:domain lden:LimesSpecs;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "hasTarget"@en  ;
     rdfs:range lden:TargetDataset .
 
@@ -99,7 +98,7 @@ lden:hasMetric
     a rdf:Property ;
     rdfs:comment "The property that determines the metric expression used by the link specification to calculate similarities."@en  ;
     rdfs:domain lden:LimesSpecs;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "hasMetric"@en  ;
     rdfs:range lden:Metric .
 
@@ -107,7 +106,7 @@ lden:hasAcceptance
     a rdf:Property ;
     rdfs:comment "The property that determines the acceptance specifications used in link specification in case of similarity is above acceptance threshold."@en  ;
     rdfs:domain lden:LimesSpecs;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "hasAcceptance"@en  ;
     rdfs:range lden:Acceptance .
 
@@ -115,7 +114,7 @@ lden:hasReview
     a rdf:Property ;
     rdfs:comment "The property that determines the review specifications used in link specification in case of similarity is below acceptance threshold and above review threshold."@en  ;
     rdfs:domain lden:LimesSpecs;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "hasReview"@en  ;
     rdfs:range lden:Review .
 
@@ -123,7 +122,7 @@ lden:endPoint
     a rdf:Property ;
     rdfs:comment "The property that determines the endpoint or file (in case of using dump-file) that contains the dataset used by link specification for linking process"@en  ;
     rdfs:domain lden:DataSet,lden:SourceDataset,lden:TargetDataset;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "endpoint"@en  ;
     rdfs:range xsd:anyURI .
 
@@ -131,7 +130,7 @@ lden:graph
     a rdf:Property ;
     rdfs:comment "The property that determines the endpoint's graph that contains the dataset used by link specification for linking process"@en  ;
     rdfs:domain lden:DataSet,lden:SourceDataset,lden:TargetDataset;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "graph"@en  ;
     rdfs:range xsd:anyURI .
 
@@ -139,7 +138,7 @@ lden:type
     a rdf:Property ;
     rdfs:comment "The property determines the type of the data source either endpoint (SPARQL) or file with different formats(CSV, N3, N-TRIPLE and TURTLE)"@en  ;
     rdfs:domain lden:DataSet,lden:SourceDataset,lden:TargetDataset;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "type"@en  ;
     rdfs:range xsd:string .
 
@@ -147,7 +146,7 @@ lden:variable
     a rdf:Property ;
     rdfs:comment "The property that determines a variable name, which is used to represent either the source or target dataset. This variable is used in combination with each property name as parameters for similarity functions"@en  ;
     rdfs:domain lden:DataSet,lden:SourceDataset,lden:TargetDataset;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "variable"@en  ;
     rdfs:range xsd:string .
 
@@ -155,7 +154,7 @@ lden:pageSize
     a rdf:Property ;
     rdfs:comment "The property determines the page size, i.e. the number of statements to be retrieved from the dataset's endpoint."@en  ;
     rdfs:domain lden:DataSet,lden:SourceDataset,lden:TargetDataset;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "pageSize"@en  ;
     rdfs:range xsd:nonNegativeInteger .
 
@@ -163,7 +162,7 @@ lden:restriction
     a rdf:Property ;
     rdfs:comment "The property determines the restriction(s) applied to the data retrieved from source/target datasets"@en  ;
     rdfs:domain lden:DataSet,lden:SourceDataset,lden:TargetDataset;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "restriction"@en  ;
     rdfs:range xsd:string .
 
@@ -171,7 +170,7 @@ lden:property
     a rdf:Property ;
     rdfs:comment "The property determines the dataset's property that will be input to similarity measuring function"@en  ;
     rdfs:domain lden:DataSet,lden:SourceDataset,lden:TargetDataset;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "property"@en  ;
     rdfs:range xsd:string .
 
@@ -179,7 +178,7 @@ lden:expression
     a rdf:Property ;
     rdfs:comment "The property determines the metric expression string. This metric expression composes of similarity functions together with their input properties and associated thresholds. Also, the metric expression may contain other aggregation function such as Min and Max"@en  ;
     rdfs:domain lden:Metric;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "expression"@en  ;
     rdfs:range xsd:string .
 
@@ -187,7 +186,7 @@ lden:threshold
     a rdf:Property ;
     rdfs:comment "The property determines the threshold to be achieved by the similarity function to classify the resources as similar, not similar or need to be reviewed"@en  ;
     rdfs:domain lden:Acceptance,lden:Review;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "threshold"@en  ;
     rdfs:range xsd:float .
 
@@ -195,7 +194,7 @@ lden:file
     a rdf:Property ;
     rdfs:comment "The property determines the file path where accepted or need to be reviewed entities are saved"@en  ;
     rdfs:domain lden:Acceptance,lden:Review;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "file"@en  ;
     rdfs:range xsd:string .
 
@@ -203,7 +202,7 @@ lden:relation
     a rdf:Property ;
     rdfs:comment "The property determines the type of the relationship between linked source and target instances"@en  ;
     rdfs:domain lden:Acceptance,lden:Review;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "relation"@en  ;
     rdfs:range xsd:string .
 
@@ -211,7 +210,7 @@ lden:exemplars
     a rdf:Property ;
     rdfs:comment "The property determines the number of exemplars of the link specification"@en  ;
     rdfs:domain lden:LimesSpecs;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "exemplars"@en  ;
     rdfs:range xsd:nonNegativeInteger .
 
@@ -219,7 +218,7 @@ lden:granularity
     a rdf:Property ;
     rdfs:comment "The property determines the granularity of the link specification"@en  ;
     rdfs:domain lden:LimesSpecs;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "granularity"@en  ;
     rdfs:range xsd:nonNegativeInteger .
 
@@ -227,7 +226,7 @@ lden:outputFormat
     a rdf:Property ;
     rdfs:comment "The property determines the output format of the generated datasets. These datasets contain either accepted or to be reviewed entities"@en  ;
     rdfs:domain lden:LimesSpecs;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "outputFormat"@en  ;
     rdfs:range xsd:string .
 
@@ -235,6 +234,6 @@ lden:executionPlan
     a rdf:Property ;
     rdfs:comment "The property determines the execution plan to be either SIMPLE and FILTER."@en  ;
     rdfs:domain lden:LimesSpecs;
-    rdfs:isDefinedBy <http://www.nlp2rdf.org/quranvocab#> ;
+    rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "executionPlan"@en  ;
     rdfs:range xsd:string .
