@@ -122,17 +122,17 @@ lden:Abt-Buy_spec_review
     a lden:Review .
 
 lden:Abt-Buy_spec_source
-    lden:endPoint <file:///home/sherif/JavaProjects/LionDen/output/Examples/GeneticEval/Datasets/Abt-Buy/Abt.csv> ;
+    lden:endPoint <Examples/GeneticEval/Datasets/Abt-Buy/Abt.csv> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/description>, <file:///home/sherif/JavaProjects/LionDen/output/name>, <file:///home/sherif/JavaProjects/LionDen/output/price> ;
+    lden:property <description>, <name>, <price> ;
     lden:variable "?x" ;
     a lden:DataSet, lden:SourceDataset ;
     rdfs:label "abt" .
 
 lden:Abt-Buy_spec_target
-    lden:endPoint <file:///home/sherif/JavaProjects/LionDen/output/Examples/GeneticEval/Datasets/Abt-Buy/Buy.csv> ;
+    lden:endPoint <Examples/GeneticEval/Datasets/Abt-Buy/Buy.csv> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/description>, <file:///home/sherif/JavaProjects/LionDen/output/name>, <file:///home/sherif/JavaProjects/LionDen/output/price> ;
+    lden:property <description>, <name>, <price> ;
     lden:variable "?y" ;
     a lden:DataSet, lden:TargetDataset ;
     rdfs:label "buy" .
@@ -169,17 +169,17 @@ lden:Amazon-GoogleProducts_spec_review
     a lden:Review .
 
 lden:Amazon-GoogleProducts_spec_source
-    lden:endPoint <file:///home/sherif/JavaProjects/LionDen/output/Examples/GeneticEval/Datasets/Amazon-GoogleProducts/Amazon.csv> ;
+    lden:endPoint <Examples/GeneticEval/Datasets/Amazon-GoogleProducts/Amazon.csv> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/description>, <file:///home/sherif/JavaProjects/LionDen/output/manufacturer>, <file:///home/sherif/JavaProjects/LionDen/output/price>, <file:///home/sherif/JavaProjects/LionDen/output/title> ;
+    lden:property <description>, <manufacturer>, <price>, <title> ;
     lden:variable "?x" ;
     a lden:DataSet, lden:SourceDataset ;
     rdfs:label "amazon" .
 
 lden:Amazon-GoogleProducts_spec_target
-    lden:endPoint <file:///home/sherif/JavaProjects/LionDen/output/Examples/GeneticEval/Datasets/Amazon-GoogleProducts/GoogleProducts.csv> ;
+    lden:endPoint <Examples/GeneticEval/Datasets/Amazon-GoogleProducts/GoogleProducts.csv> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/description>, <file:///home/sherif/JavaProjects/LionDen/output/manufacturer>, <file:///home/sherif/JavaProjects/LionDen/output/name>, <file:///home/sherif/JavaProjects/LionDen/output/price> ;
+    lden:property <description>, <manufacturer>, <name>, <price> ;
     lden:variable "?y" ;
     a lden:DataSet, lden:TargetDataset ;
     rdfs:label "googleprod" .
@@ -217,17 +217,17 @@ lden:DBLP-Scholar_spec_review
     a lden:Review .
 
 lden:DBLP-Scholar_spec_source
-    lden:endPoint <file:///home/sherif/JavaProjects/LionDen/output/Examples/GeneticEval/Datasets/DBLP-Scholar/DBLP1.csv> ;
+    lden:endPoint <Examples/GeneticEval/Datasets/DBLP-Scholar/DBLP1.csv> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/authors>, <file:///home/sherif/JavaProjects/LionDen/output/title>, <file:///home/sherif/JavaProjects/LionDen/output/venue>, <file:///home/sherif/JavaProjects/LionDen/output/year> ;
+    lden:property <authors>, <title>, <venue>, <year> ;
     lden:variable "?x" ;
     a lden:DataSet, lden:SourceDataset ;
     rdfs:label "dblp1" .
 
 lden:DBLP-Scholar_spec_target
-    lden:endPoint <file:///home/sherif/JavaProjects/LionDen/output/Examples/GeneticEval/Datasets/DBLP-Scholar/Scholar.csv> ;
+    lden:endPoint <Examples/GeneticEval/Datasets/DBLP-Scholar/Scholar.csv> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/authors>, <file:///home/sherif/JavaProjects/LionDen/output/title>, <file:///home/sherif/JavaProjects/LionDen/output/venue>, <file:///home/sherif/JavaProjects/LionDen/output/year> ;
+    lden:property <authors>, <title>, <venue>, <year> ;
     lden:variable "?y" ;
     a lden:DataSet, lden:TargetDataset ;
     rdfs:label "scholar" .
@@ -316,7 +316,7 @@ lden:HUFO-ICF_spec_review
 lden:HUFO-ICF_spec_source
     lden:endPoint <D:/Work/Data/Muscles/bodypart_icf.csv> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/dbpedia_functions> ;
+    lden:property <dbpedia_functions> ;
     lden:variable "?x" ;
     a lden:DataSet, lden:SourceDataset ;
     rdfs:label "bodypart" .
@@ -324,7 +324,7 @@ lden:HUFO-ICF_spec_source
 lden:HUFO-ICF_spec_target
     lden:endPoint <D:/Work/Data/Muscles/icfENall.csv> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/description> ;
+    lden:property <description> ;
     lden:variable "?y" ;
     a lden:DataSet, lden:TargetDataset ;
     rdfs:label "icf" .
@@ -361,17 +361,17 @@ lden:PublicationData_spec_review
     a lden:Review .
 
 lden:PublicationData_spec_source
-    lden:endPoint <file:///home/sherif/JavaProjects/LionDen/output/Examples/GeneticEval/Datasets/DBLP-ACM/DBLP2.csv> ;
+    lden:endPoint <Examples/GeneticEval/Datasets/DBLP-ACM/DBLP2.csv> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/authors>, <file:///home/sherif/JavaProjects/LionDen/output/title>, <file:///home/sherif/JavaProjects/LionDen/output/venue> ;
+    lden:property <authors>, <title>, <venue> ;
     lden:variable "?x" ;
     a lden:DataSet, lden:SourceDataset ;
     rdfs:label "dblp2" .
 
 lden:PublicationData_spec_target
-    lden:endPoint <file:///home/sherif/JavaProjects/LionDen/output/Examples/GeneticEval/Datasets/DBLP-ACM/ACM.csv> ;
+    lden:endPoint <Examples/GeneticEval/Datasets/DBLP-ACM/ACM.csv> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/authors>, <file:///home/sherif/JavaProjects/LionDen/output/title>, <file:///home/sherif/JavaProjects/LionDen/output/venue> ;
+    lden:property <authors>, <title>, <venue> ;
     lden:variable "?y" ;
     a lden:DataSet, lden:TargetDataset ;
     rdfs:label "acm" .
@@ -509,7 +509,7 @@ lden:acm-dblp_spec_review
 lden:acm-dblp_spec_source
     lden:endPoint <D:/Work/Data/DBvsLIMES/DBLP-ACM/ACM.csv> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/title> ;
+    lden:property <title> ;
     lden:variable "?x" ;
     a lden:DataSet, lden:SourceDataset ;
     rdfs:label "dbpedia" .
@@ -517,7 +517,7 @@ lden:acm-dblp_spec_source
 lden:acm-dblp_spec_target
     lden:endPoint <D:/Work/Data/DBvsLIMES/DBLP-ACM/DBLP2.csv> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/title> ;
+    lden:property <title> ;
     lden:variable "?y" ;
     a lden:DataSet, lden:TargetDataset ;
     rdfs:label "drugbank" .
@@ -1142,7 +1142,7 @@ lden:cerl_places_DBpedia_2_source
 lden:cerl_places_DBpedia_2_target
     lden:endPoint <D:/Work/Data/CERL/places.csv> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/label> ;
+    lden:property <label> ;
     lden:variable "?y" ;
     a lden:DataSet, lden:TargetDataset ;
     rdfs:label "CERL" .
@@ -1182,7 +1182,7 @@ lden:cerl_places_DBpedia_spec_review
 lden:cerl_places_DBpedia_spec_source
     lden:endPoint <D:/Work/Data/CERL/places.csv> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/label> ;
+    lden:property <label> ;
     lden:variable "?x" ;
     a lden:DataSet, lden:SourceDataset ;
     rdfs:label "CERL" .
@@ -2087,17 +2087,17 @@ lden:dailymed-drugbank_spec_review
     a lden:Review .
 
 lden:dailymed-drugbank_spec_source
-    lden:endPoint <file:///home/sherif/JavaProjects/LionDen/output/Examples/GeneticEval/Datasets/dailymed-drugbank-ingredients/source2.csv> ;
+    lden:endPoint <dailymed.csv> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/name> ;
+    lden:property <name> ;
     lden:variable "?x" ;
     a lden:DataSet, lden:SourceDataset ;
     rdfs:label "daily" .
 
 lden:dailymed-drugbank_spec_target
-    lden:endPoint <file:///home/sherif/JavaProjects/LionDen/output/Examples/GeneticEval/Datasets/dailymed-drugbank-ingredients/target2.csv> ;
+    lden:endPoint <drugbank.csv> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/name> ;
+    lden:property <name> ;
     lden:variable "?y" ;
     a lden:DataSet, lden:TargetDataset ;
     rdfs:label "drugbank" .
@@ -6972,17 +6972,17 @@ lden:dbpedia-linkedmdb_spec_review
     a lden:Review .
 
 lden:dbpedia-linkedmdb_spec_source
-    lden:endPoint <file:///home/sherif/JavaProjects/LionDen/output/Examples/GeneticEval/Datasets/dbpedia-linkedmdb/source2.csv> ;
+    lden:endPoint <dbpedia.csv> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/director>, <file:///home/sherif/JavaProjects/LionDen/output/title> ;
+    lden:property <director>, <title> ;
     lden:variable "?x" ;
     a lden:DataSet, lden:SourceDataset ;
     rdfs:label "linkedmdb" .
 
 lden:dbpedia-linkedmdb_spec_target
-    lden:endPoint <file:///home/sherif/JavaProjects/LionDen/output/Examples/GeneticEval/Datasets/dbpedia-linkedmdb/target2.csv> ;
+    lden:endPoint <linkedmdb.csv> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/director>, <file:///home/sherif/JavaProjects/LionDen/output/title> ;
+    lden:property <director>, <title> ;
     lden:variable "?y" ;
     a lden:DataSet, lden:TargetDataset ;
     rdfs:label "dbpedia" .
@@ -7658,7 +7658,7 @@ lden:dbpediaQueryLog_spec_review
 lden:dbpediaQueryLog_spec_source
     lden:endPoint <D:/Work/Data/queries_IDs.txt> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/label> ;
+    lden:property <label> ;
     lden:variable "?x" ;
     a lden:DataSet, lden:SourceDataset ;
     rdfs:label "CERL" .
@@ -7666,7 +7666,7 @@ lden:dbpediaQueryLog_spec_source
 lden:dbpediaQueryLog_spec_target
     lden:endPoint <D:/Work/Data/queries_IDs.txt> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/label> ;
+    lden:property <label> ;
     lden:variable "?y" ;
     a lden:DataSet, lden:TargetDataset ;
     rdfs:label "CERL" .
@@ -11704,7 +11704,7 @@ lden:gho-linkedct-country_spec_source
 lden:gho-linkedct-country_spec_target
     lden:endPoint <http://lgd.aksw.org:8900/sparql> ;
     lden:pageSize "1000"^^xsd:int ;
-    lden:property (<file:///home/sherif/JavaProjects/LionDen/output/countryname>
+    lden:property (<countryname>
         rdfs:label
     ) ;
     lden:restriction "?countryname rdf:type gho:Country", "?countryname rdf:type gho:Country." ;
@@ -11747,7 +11747,7 @@ lden:gho-linkedct-disease_spec_review
 lden:gho-linkedct-disease_spec_source
     lden:endPoint <http://lgd.aksw.org:8900/sparql> ;
     lden:pageSize "1000"^^xsd:int ;
-    lden:property (<file:///home/sherif/JavaProjects/LionDen/output/seasename>
+    lden:property (<seasename>
         rdfs:label
     ) ;
     lden:restriction "?diseasename rdf:type gho:Disease", "?diseasename rdf:type gho:Disease." ;
@@ -11799,7 +11799,7 @@ lden:gho-pubmed-country_spec_review
 lden:gho-pubmed-country_spec_source
     lden:endPoint <http://lgd.aksw.org:8900/sparql> ;
     lden:pageSize "1000"^^xsd:int ;
-    lden:property (<file:///home/sherif/JavaProjects/LionDen/output/untryname>
+    lden:property (<untryname>
         rdfs:label
     ) ;
     lden:restriction "?countryname rdf:type gho:Country", "?countryname rdf:type gho:Country." ;
@@ -13188,7 +13188,7 @@ lden:musclelist2icf_spec_review
 lden:musclelist2icf_spec_source
     lden:endPoint <D:/Work/Data/Muscles/musclelist.csv> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/label> ;
+    lden:property <label> ;
     lden:variable "?x" ;
     a lden:DataSet, lden:SourceDataset ;
     rdfs:label "musclelist" .
@@ -13196,7 +13196,7 @@ lden:musclelist2icf_spec_source
 lden:musclelist2icf_spec_target
     lden:endPoint <D:/Work/Data/Muscles/icfenall.csv> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/description> ;
+    lden:property <description> ;
     lden:variable "?y" ;
     a lden:DataSet, lden:TargetDataset ;
     rdfs:label "dbpediamuscles" .
@@ -13235,7 +13235,7 @@ lden:muscles_spec_review
 lden:muscles_spec_source
     lden:endPoint <D:/Work/Data/Muscles/bodypart_icf.csv> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/dbpedia_functions> ;
+    lden:property <dbpedia_functions> ;
     lden:variable "?x" ;
     a lden:DataSet, lden:SourceDataset ;
     rdfs:label "musclelist" .
@@ -13243,7 +13243,7 @@ lden:muscles_spec_source
 lden:muscles_spec_target
     lden:endPoint <D:/Work/Data/Muscles/chariteFragenUpdateEnDeBetter.csv> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/Keywords> ;
+    lden:property <Keywords> ;
     lden:variable "?y" ;
     a lden:DataSet, lden:TargetDataset ;
     rdfs:label "dbpediamuscles" .
@@ -13563,7 +13563,7 @@ lden:persons1_spec_review
     a lden:Review .
 
 lden:persons1_spec_source
-    lden:endPoint <file:///home/sherif/JavaProjects/LionDen/output/resources/Persons1/person11.nt> ;
+    lden:endPoint <resources/Persons1/person11.nt> ;
     lden:pageSize "1000"^^xsd:int ;
     lden:property okkamperson1:age, okkamperson1:date_of_birth, okkamperson1:given_name, okkamperson1:has_address, okkamperson1:phone_numer, okkamperson1:soc_sec_id, okkamperson1:surname ;
     lden:restriction "?x rdf:type okkamperson1:Person" ;
@@ -13572,7 +13572,7 @@ lden:persons1_spec_source
     rdfs:label "person11" .
 
 lden:persons1_spec_target
-    lden:endPoint <file:///home/sherif/JavaProjects/LionDen/output/resources/Persons1/person12.nt> ;
+    lden:endPoint <resources/Persons1/person12.nt> ;
     lden:pageSize "1000"^^xsd:int ;
     lden:property okkamperson2:age, okkamperson2:date_of_birth, okkamperson2:given_name, okkamperson2:has_address, okkamperson2:phone_numer, okkamperson2:soc_sec_id, okkamperson2:surname ;
     lden:restriction "?y rdf:type okkamperson2:Person" ;
@@ -13613,7 +13613,7 @@ lden:persons2_spec_review
     a lden:Review .
 
 lden:persons2_spec_source
-    lden:endPoint <file:///home/sherif/JavaProjects/LionDen/output/resources/Persons2/person21.nt> ;
+    lden:endPoint <resources/Persons2/person21.nt> ;
     lden:pageSize "1000"^^xsd:int ;
     lden:property okkamperson1:age, okkamperson1:date_of_birth, okkamperson1:given_name, okkamperson1:has_address, okkamperson1:phone_numer, okkamperson1:soc_sec_id, okkamperson1:surname ;
     lden:restriction "?x rdf:type okkamperson1:Person" ;
@@ -13622,7 +13622,7 @@ lden:persons2_spec_source
     rdfs:label "person11" .
 
 lden:persons2_spec_target
-    lden:endPoint <file:///home/sherif/JavaProjects/LionDen/output/resources/Persons2/person22.nt> ;
+    lden:endPoint <resources/Persons2/person22.nt> ;
     lden:pageSize "1000"^^xsd:int ;
     lden:property okkamperson2:age, okkamperson2:date_of_birth, okkamperson2:given_name, okkamperson2:has_address, okkamperson2:phone_numer, okkamperson2:soc_sec_id, okkamperson2:surname ;
     lden:restriction "?y rdf:type okkamperson2:Person" ;
@@ -14225,7 +14225,7 @@ lden:restaurants_spec_review
     a lden:Review .
 
 lden:restaurants_spec_source
-    lden:endPoint <file:///home/sherif/JavaProjects/LionDen/output/resources/Restaurants/restaurant1.nt> ;
+    lden:endPoint <resources/Restaurants/restaurant1.nt> ;
     lden:pageSize "1000"^^xsd:int ;
     lden:property okkamrestaurant1:category, okkamrestaurant1:has_address, okkamrestaurant1:name, okkamrestaurant1:phone_number ;
     lden:restriction "?x rdf:type okkamrestaurant1:Restaurant" ;
@@ -14234,7 +14234,7 @@ lden:restaurants_spec_source
     rdfs:label "restaurant1" .
 
 lden:restaurants_spec_target
-    lden:endPoint <file:///home/sherif/JavaProjects/LionDen/output/resources/Restaurants/restaurant2.nt> ;
+    lden:endPoint <resources/Restaurants/restaurant2.nt> ;
     lden:pageSize "1000"^^xsd:int ;
     lden:property okkamrestaurant2:has_address, okkamrestaurant2:name, okkamrestaurant2:phone_number ;
     lden:restriction "?x rdf:type okkamrestaurant2:Restaurant" ;
@@ -14417,7 +14417,7 @@ lden:robPhenotypes_spec_review
 lden:robPhenotypes_spec_source
     lden:endPoint <D:/Work/Data/robvectors.txt> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/vector> ;
+    lden:property <vector> ;
     lden:variable "?x" ;
     a lden:DataSet, lden:SourceDataset ;
     rdfs:label "PHEN" .
@@ -14425,7 +14425,7 @@ lden:robPhenotypes_spec_source
 lden:robPhenotypes_spec_target
     lden:endPoint <D:/Work/Data/robvectors.txt> ;
     lden:pageSize "-1"^^xsd:int ;
-    lden:property <file:///home/sherif/JavaProjects/LionDen/output/vector> ;
+    lden:property <vector> ;
     lden:variable "?x" ;
     a lden:DataSet, lden:TargetDataset ;
     rdfs:label "PHEN" .
@@ -15658,7 +15658,7 @@ lden:veterinary_spec_target
     a lden:DataSet, lden:TargetDataset ;
     rdfs:label "linkedgeodata" .
 
-<http://www.linklion.org/ldentransport-ontologi.es-rail-stations_spec>
+<http://www.linklion.org/lden/transport-ontologi.es-rail-stations_spec>
     dcterms:created "2011" ;
     dcterms:creator "AKSW" ;
     dcterms:license <https://www.informatik.uni-leipzig.de/svn/an/devan/LIMES/README> ;
@@ -15668,29 +15668,29 @@ lden:veterinary_spec_target
     lden:examplars "50" ;
     lden:executionPlan "Simple" ;
     lden:granularity "1"^^xsd:int ;
-    lden:hasAcceptance <http://www.linklion.org/ldentransport-ontologi.es-rail-stations_spec_acceptance> ;
-    lden:hasMetric <http://www.linklion.org/ldentransport-ontologi.es-rail-stations_spec_metric> ;
-    lden:hasReview <http://www.linklion.org/ldentransport-ontologi.es-rail-stations_spec_review> ;
-    lden:hasSource <http://www.linklion.org/ldentransport-ontologi.es-rail-stations_spec_source> ;
-    lden:hasTarget <http://www.linklion.org/ldentransport-ontologi.es-rail-stations_spec_target> ;
+    lden:hasAcceptance <http://www.linklion.org/lden/transport-ontologi.es-rail-stations_spec_acceptance> ;
+    lden:hasMetric <http://www.linklion.org/lden/transport-ontologi.es-rail-stations_spec_metric> ;
+    lden:hasReview <http://www.linklion.org/lden/transport-ontologi.es-rail-stations_spec_review> ;
+    lden:hasSource <http://www.linklion.org/lden/transport-ontologi.es-rail-stations_spec_source> ;
+    lden:hasTarget <http://www.linklion.org/lden/transport-ontologi.es-rail-stations_spec_target> ;
     lden:outputFormat "TAB" ;
     a lden:LimesSpecs, lden:LinkSpecs ; prov:wasGeneratedBy "LIMES" ; prov:wasAssociatedWith "LIMES manual"; prov:generatedAtTime "2015-04-29" .
 
-<http://www.linklion.org/ldentransport-ontologi.es-rail-stations_spec_acceptance>
+<http://www.linklion.org/lden/transport-ontologi.es-rail-stations_spec_acceptance>
     lden:relation owl:sameAs ;
     lden:threshold 0.98 ;
     a lden:Acceptance .
 
-<http://www.linklion.org/ldentransport-ontologi.es-rail-stations_spec_metric>
+<http://www.linklion.org/lden/transport-ontologi.es-rail-stations_spec_metric>
     lden:expression "ADD(1*Equality(a.naptan:crsRef, b.rail:crs))" ;
     a lden:Metric .
 
-<http://www.linklion.org/ldentransport-ontologi.es-rail-stations_spec_review>
+<http://www.linklion.org/lden/transport-ontologi.es-rail-stations_spec_review>
     lden:relation owl:sameAs ;
     lden:threshold 0.98 ;
     a lden:Review .
 
-<http://www.linklion.org/ldentransport-ontologi.es-rail-stations_spec_source>
+<http://www.linklion.org/lden/transport-ontologi.es-rail-stations_spec_source>
     lden:endPoint <http://api.talis.com/stores/transport/services/sparql> ;
     lden:pageSize "1000"^^xsd:int ;
     lden:property naptan:crsRef ;
@@ -15699,7 +15699,7 @@ lden:veterinary_spec_target
     a lden:DataSet, lden:SourceDataset ;
     rdfs:label "transport-data-gov-uk" .
 
-<http://www.linklion.org/ldentransport-ontologi.es-rail-stations_spec_target>
+<http://www.linklion.org/lden/transport-ontologi.es-rail-stations_spec_target>
     lden:endPoint <http://sparql.sindice.com/sparql> ;
     lden:pageSize "1000"^^xsd:int ;
     lden:property rail:crs ;

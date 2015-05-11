@@ -37,7 +37,7 @@ lden:SilkSpecs
     rdfs:subClassOf lden:LinkSpec, rdfs:Resource .
 
 lden:DataSet
-    a rdfs:Class ;
+    a rdfs:Class, a void:Dataset ;
     rdfs:comment "The class of the dataset used by link specification."@en  ;
     rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "Dataset"@en  ;
@@ -48,14 +48,14 @@ lden:SourceDataset
     rdfs:comment "The class of the source dataset used by link specification in linking process."@en  ;
     rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "Source Dataset"@en  ;
-    rdfs:subClassOf lden:DataSet,rdfs:Resource .
+    rdfs:subClassOf lden:DataSet, rdfs:Resource .
 
 lden:TargetDataset
     a rdfs:Class ;
     rdfs:comment "The class of the target dataset used by link specification in linking process."@en  ;
     rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "Target Dataset"@en  ;
-    rdfs:subClassOf lden:DataSet,rdfs:Resource .
+    rdfs:subClassOf lden:DataSet, rdfs:Resource .
 
 lden:Metric
     a rdfs:Class ;
