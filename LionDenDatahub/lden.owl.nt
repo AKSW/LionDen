@@ -1,0 +1,191 @@
+<http://www.linklion.org/lden/> <http://purl.org/dc/elements/1.1/title> "The Link Specification Ontology"@en .
+<http://www.linklion.org/lden/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://www.linklion.org/lden/> <http://www.w3.org/2000/01/rdf-schema#comment> "This ontology partially describes classes and  properties that together form the basis of link specifications dataset."@en .
+<http://www.linklion.org/lden/> <http://www.w3.org/2002/07/owl#versionIRI> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/LinkSpecs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://www.linklion.org/lden/LinkSpecs> <http://www.w3.org/2000/01/rdf-schema#comment> "The class of a link specification."@en .
+<http://www.linklion.org/lden/LinkSpecs> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/LinkSpecs> <http://www.w3.org/2000/01/rdf-schema#label> "Link Specification"@en .
+<http://www.linklion.org/lden/LinkSpecs> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://www.linklion.org/lden/LimesSpecs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://www.linklion.org/lden/LimesSpecs> <http://www.w3.org/2000/01/rdf-schema#comment> "The class of a link specification for LIMES."@en .
+<http://www.linklion.org/lden/LimesSpecs> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/LimesSpecs> <http://www.w3.org/2000/01/rdf-schema#label> "LIMES Link Specification"@en .
+<http://www.linklion.org/lden/LimesSpecs> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.linklion.org/lden/LinkSpec> .
+<http://www.linklion.org/lden/LimesSpecs> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://www.linklion.org/lden/SilkSpecs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://www.linklion.org/lden/SilkSpecs> <http://www.w3.org/2000/01/rdf-schema#comment> "The class of a link specification for SILK."@en .
+<http://www.linklion.org/lden/SilkSpecs> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/SilkSpecs> <http://www.w3.org/2000/01/rdf-schema#label> "Silk Link Specification"@en .
+<http://www.linklion.org/lden/SilkSpecs> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.linklion.org/lden/LinkSpec> .
+<http://www.linklion.org/lden/SilkSpecs> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://www.linklion.org/lden/DataSet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://www.linklion.org/lden/DataSet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rdfs.org/ns/void#Dataset> .
+<http://www.linklion.org/lden/DataSet> <http://www.w3.org/2000/01/rdf-schema#comment> "The class of the dataset used by link specification."@en .
+<http://www.linklion.org/lden/DataSet> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/DataSet> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset"@en .
+<http://www.linklion.org/lden/DataSet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://www.linklion.org/lden/SourceDataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://www.linklion.org/lden/SourceDataset> <http://www.w3.org/2000/01/rdf-schema#comment> "The class of the source dataset used by link specification in linking process."@en .
+<http://www.linklion.org/lden/SourceDataset> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/SourceDataset> <http://www.w3.org/2000/01/rdf-schema#label> "Source Dataset"@en .
+<http://www.linklion.org/lden/SourceDataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.linklion.org/lden/DataSet> .
+<http://www.linklion.org/lden/SourceDataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://www.linklion.org/lden/TargetDataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://www.linklion.org/lden/TargetDataset> <http://www.w3.org/2000/01/rdf-schema#comment> "The class of the target dataset used by link specification in linking process."@en .
+<http://www.linklion.org/lden/TargetDataset> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/TargetDataset> <http://www.w3.org/2000/01/rdf-schema#label> "Target Dataset"@en .
+<http://www.linklion.org/lden/TargetDataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.linklion.org/lden/DataSet> .
+<http://www.linklion.org/lden/TargetDataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://www.linklion.org/lden/Metric> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://www.linklion.org/lden/Metric> <http://www.w3.org/2000/01/rdf-schema#comment> "The class of the metric expression used in the link specification. This includes similarity functions applied to different resource properties in combination with similarities thresholds"@en .
+<http://www.linklion.org/lden/Metric> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/Metric> <http://www.w3.org/2000/01/rdf-schema#label> "Metric"@en .
+<http://www.linklion.org/lden/Metric> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://www.linklion.org/lden/Acceptance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://www.linklion.org/lden/Acceptance> <http://www.w3.org/2000/01/rdf-schema#comment> "The class of acceptance status including threshold, file and acceptance relation."@en .
+<http://www.linklion.org/lden/Acceptance> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/Acceptance> <http://www.w3.org/2000/01/rdf-schema#label> "Acceptance"@en .
+<http://www.linklion.org/lden/Acceptance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://www.linklion.org/lden/Review> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://www.linklion.org/lden/Review> <http://www.w3.org/2000/01/rdf-schema#comment> "The class of review status including threshold, file and review relation."@en .
+<http://www.linklion.org/lden/Review> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/Review> <http://www.w3.org/2000/01/rdf-schema#label> "Review"@en .
+<http://www.linklion.org/lden/Review> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://www.linklion.org/lden/hasSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://www.linklion.org/lden/hasSource> <http://www.w3.org/2000/01/rdf-schema#comment> "The property that determines the source dataset used by the link specification."@en .
+<http://www.linklion.org/lden/hasSource> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/LimesSpecs> .
+<http://www.linklion.org/lden/hasSource> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/hasSource> <http://www.w3.org/2000/01/rdf-schema#label> "hasSource"@en .
+<http://www.linklion.org/lden/hasSource> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.linklion.org/lden/SourceDataset> .
+<http://www.linklion.org/lden/hasTarget> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://www.linklion.org/lden/hasTarget> <http://www.w3.org/2000/01/rdf-schema#comment> "The property that determines the target dataset used by the link specification."@en .
+<http://www.linklion.org/lden/hasTarget> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/LimesSpecs> .
+<http://www.linklion.org/lden/hasTarget> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/hasTarget> <http://www.w3.org/2000/01/rdf-schema#label> "hasTarget"@en .
+<http://www.linklion.org/lden/hasTarget> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.linklion.org/lden/TargetDataset> .
+<http://www.linklion.org/lden/hasMetric> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://www.linklion.org/lden/hasMetric> <http://www.w3.org/2000/01/rdf-schema#comment> "The property that determines the metric expression used by the link specification to calculate similarities."@en .
+<http://www.linklion.org/lden/hasMetric> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/LimesSpecs> .
+<http://www.linklion.org/lden/hasMetric> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/hasMetric> <http://www.w3.org/2000/01/rdf-schema#label> "hasMetric"@en .
+<http://www.linklion.org/lden/hasMetric> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.linklion.org/lden/Metric> .
+<http://www.linklion.org/lden/hasAcceptance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://www.linklion.org/lden/hasAcceptance> <http://www.w3.org/2000/01/rdf-schema#comment> "The property that determines the acceptance specifications used in link specification in case of similarity is above acceptance threshold."@en .
+<http://www.linklion.org/lden/hasAcceptance> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/LimesSpecs> .
+<http://www.linklion.org/lden/hasAcceptance> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/hasAcceptance> <http://www.w3.org/2000/01/rdf-schema#label> "hasAcceptance"@en .
+<http://www.linklion.org/lden/hasAcceptance> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.linklion.org/lden/Acceptance> .
+<http://www.linklion.org/lden/hasReview> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://www.linklion.org/lden/hasReview> <http://www.w3.org/2000/01/rdf-schema#comment> "The property that determines the review specifications used in link specification in case of similarity is below acceptance threshold and above review threshold."@en .
+<http://www.linklion.org/lden/hasReview> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/LimesSpecs> .
+<http://www.linklion.org/lden/hasReview> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/hasReview> <http://www.w3.org/2000/01/rdf-schema#label> "hasReview"@en .
+<http://www.linklion.org/lden/hasReview> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.linklion.org/lden/Review> .
+<http://www.linklion.org/lden/endPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://www.linklion.org/lden/endPoint> <http://www.w3.org/2000/01/rdf-schema#comment> "The property that determines the endpoint or file (in case of using dump-file) that contains the dataset used by link specification for linking process"@en .
+<http://www.linklion.org/lden/endPoint> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/DataSet> .
+<http://www.linklion.org/lden/endPoint> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/SourceDataset> .
+<http://www.linklion.org/lden/endPoint> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/TargetDataset> .
+<http://www.linklion.org/lden/endPoint> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/endPoint> <http://www.w3.org/2000/01/rdf-schema#label> "endpoint"@en .
+<http://www.linklion.org/lden/endPoint> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://www.linklion.org/lden/graph> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://www.linklion.org/lden/graph> <http://www.w3.org/2000/01/rdf-schema#comment> "The property that determines the endpoint's graph that contains the dataset used by link specification for linking process"@en .
+<http://www.linklion.org/lden/graph> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/DataSet> .
+<http://www.linklion.org/lden/graph> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/SourceDataset> .
+<http://www.linklion.org/lden/graph> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/TargetDataset> .
+<http://www.linklion.org/lden/graph> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/graph> <http://www.w3.org/2000/01/rdf-schema#label> "graph"@en .
+<http://www.linklion.org/lden/graph> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://www.linklion.org/lden/type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://www.linklion.org/lden/type> <http://www.w3.org/2000/01/rdf-schema#comment> "The property determines the type of the data source either endpoint (SPARQL) or file with different formats(CSV, N3, N-TRIPLE and TURTLE)"@en .
+<http://www.linklion.org/lden/type> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/DataSet> .
+<http://www.linklion.org/lden/type> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/SourceDataset> .
+<http://www.linklion.org/lden/type> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/TargetDataset> .
+<http://www.linklion.org/lden/type> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/type> <http://www.w3.org/2000/01/rdf-schema#label> "type"@en .
+<http://www.linklion.org/lden/type> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.linklion.org/lden/variable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://www.linklion.org/lden/variable> <http://www.w3.org/2000/01/rdf-schema#comment> "The property that determines a variable name, which is used to represent either the source or target dataset. This variable is used in combination with each property name as parameters for similarity functions"@en .
+<http://www.linklion.org/lden/variable> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/DataSet> .
+<http://www.linklion.org/lden/variable> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/SourceDataset> .
+<http://www.linklion.org/lden/variable> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/TargetDataset> .
+<http://www.linklion.org/lden/variable> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/variable> <http://www.w3.org/2000/01/rdf-schema#label> "variable"@en .
+<http://www.linklion.org/lden/variable> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.linklion.org/lden/pageSize> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://www.linklion.org/lden/pageSize> <http://www.w3.org/2000/01/rdf-schema#comment> "The property determines the page size, i.e. the number of statements to be retrieved from the dataset's endpoint."@en .
+<http://www.linklion.org/lden/pageSize> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/DataSet> .
+<http://www.linklion.org/lden/pageSize> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/SourceDataset> .
+<http://www.linklion.org/lden/pageSize> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/TargetDataset> .
+<http://www.linklion.org/lden/pageSize> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/pageSize> <http://www.w3.org/2000/01/rdf-schema#label> "pageSize"@en .
+<http://www.linklion.org/lden/pageSize> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://www.linklion.org/lden/restriction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://www.linklion.org/lden/restriction> <http://www.w3.org/2000/01/rdf-schema#comment> "The property determines the restriction(s) applied to the data retrieved from source/target datasets"@en .
+<http://www.linklion.org/lden/restriction> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/DataSet> .
+<http://www.linklion.org/lden/restriction> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/SourceDataset> .
+<http://www.linklion.org/lden/restriction> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/TargetDataset> .
+<http://www.linklion.org/lden/restriction> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/restriction> <http://www.w3.org/2000/01/rdf-schema#label> "restriction"@en .
+<http://www.linklion.org/lden/restriction> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.linklion.org/lden/property> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://www.linklion.org/lden/property> <http://www.w3.org/2000/01/rdf-schema#comment> "The property determines the dataset's property that will be input to similarity measuring function"@en .
+<http://www.linklion.org/lden/property> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/DataSet> .
+<http://www.linklion.org/lden/property> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/SourceDataset> .
+<http://www.linklion.org/lden/property> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/TargetDataset> .
+<http://www.linklion.org/lden/property> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/property> <http://www.w3.org/2000/01/rdf-schema#label> "property"@en .
+<http://www.linklion.org/lden/property> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.linklion.org/lden/expression> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://www.linklion.org/lden/expression> <http://www.w3.org/2000/01/rdf-schema#comment> "The property determines the metric expression string. This metric expression composes of similarity functions together with their input properties and associated thresholds. Also, the metric expression may contain other aggregation function such as Min and Max"@en .
+<http://www.linklion.org/lden/expression> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/Metric> .
+<http://www.linklion.org/lden/expression> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/expression> <http://www.w3.org/2000/01/rdf-schema#label> "expression"@en .
+<http://www.linklion.org/lden/expression> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.linklion.org/lden/threshold> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://www.linklion.org/lden/threshold> <http://www.w3.org/2000/01/rdf-schema#comment> "The property determines the threshold to be achieved by the similarity function to classify the resources as similar, not similar or need to be reviewed"@en .
+<http://www.linklion.org/lden/threshold> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/Acceptance> .
+<http://www.linklion.org/lden/threshold> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/Review> .
+<http://www.linklion.org/lden/threshold> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/threshold> <http://www.w3.org/2000/01/rdf-schema#label> "threshold"@en .
+<http://www.linklion.org/lden/threshold> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+<http://www.linklion.org/lden/file> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://www.linklion.org/lden/file> <http://www.w3.org/2000/01/rdf-schema#comment> "The property determines the file path where accepted or need to be reviewed entities are saved"@en .
+<http://www.linklion.org/lden/file> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/Acceptance> .
+<http://www.linklion.org/lden/file> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/Review> .
+<http://www.linklion.org/lden/file> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/file> <http://www.w3.org/2000/01/rdf-schema#label> "file"@en .
+<http://www.linklion.org/lden/file> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.linklion.org/lden/relation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://www.linklion.org/lden/relation> <http://www.w3.org/2000/01/rdf-schema#comment> "The property determines the type of the relationship between linked source and target instances"@en .
+<http://www.linklion.org/lden/relation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/Acceptance> .
+<http://www.linklion.org/lden/relation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/Review> .
+<http://www.linklion.org/lden/relation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/relation> <http://www.w3.org/2000/01/rdf-schema#label> "relation"@en .
+<http://www.linklion.org/lden/relation> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.linklion.org/lden/exemplars> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://www.linklion.org/lden/exemplars> <http://www.w3.org/2000/01/rdf-schema#comment> "The property determines the number of exemplars of the link specification"@en .
+<http://www.linklion.org/lden/exemplars> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/LimesSpecs> .
+<http://www.linklion.org/lden/exemplars> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/exemplars> <http://www.w3.org/2000/01/rdf-schema#label> "exemplars"@en .
+<http://www.linklion.org/lden/exemplars> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://www.linklion.org/lden/granularity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://www.linklion.org/lden/granularity> <http://www.w3.org/2000/01/rdf-schema#comment> "The property determines the granularity of the link specification"@en .
+<http://www.linklion.org/lden/granularity> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/LimesSpecs> .
+<http://www.linklion.org/lden/granularity> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/granularity> <http://www.w3.org/2000/01/rdf-schema#label> "granularity"@en .
+<http://www.linklion.org/lden/granularity> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://www.linklion.org/lden/outputFormat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://www.linklion.org/lden/outputFormat> <http://www.w3.org/2000/01/rdf-schema#comment> "The property determines the output format of the generated datasets. These datasets contain either accepted or to be reviewed entities"@en .
+<http://www.linklion.org/lden/outputFormat> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/LimesSpecs> .
+<http://www.linklion.org/lden/outputFormat> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/outputFormat> <http://www.w3.org/2000/01/rdf-schema#label> "outputFormat"@en .
+<http://www.linklion.org/lden/outputFormat> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.linklion.org/lden/executionPlan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://www.linklion.org/lden/executionPlan> <http://www.w3.org/2000/01/rdf-schema#comment> "The property determines the execution plan to be either SIMPLE and FILTER."@en .
+<http://www.linklion.org/lden/executionPlan> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.linklion.org/lden/LimesSpecs> .
+<http://www.linklion.org/lden/executionPlan> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.linklion.org/lden/> .
+<http://www.linklion.org/lden/executionPlan> <http://www.w3.org/2000/01/rdf-schema#label> "executionPlan"@en .
+<http://www.linklion.org/lden/executionPlan> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .

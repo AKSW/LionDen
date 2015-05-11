@@ -1,4 +1,4 @@
-@prefix rd: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix grddl: <http://www.w3.org/2003/g/data-view#> .
@@ -8,6 +8,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix lden: <http://www.linklion.org/lden/> .
 @prefix gold: <http://purl.org/linguistics/gold/> .
+@prefix void: <http://rdfs.org/ns/void#> .
 
 <http://www.linklion.org/lden/>
     dc:title "The Link Specification Ontology"@en  ;
@@ -37,7 +38,7 @@ lden:SilkSpecs
     rdfs:subClassOf lden:LinkSpec, rdfs:Resource .
 
 lden:DataSet
-    a rdfs:Class, a void:Dataset ;
+    a rdfs:Class, void:Dataset ;
     rdfs:comment "The class of the dataset used by link specification."@en  ;
     rdfs:isDefinedBy <http://www.linklion.org/lden/> ;
     rdfs:label "Dataset"@en  ;
