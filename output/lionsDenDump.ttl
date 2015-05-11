@@ -314,7 +314,7 @@ lden:HUFO-ICF_spec_review
     a lden:Review .
 
 lden:HUFO-ICF_spec_source
-    lden:endPoint <D:/Work/Data/Muscles/bodypart_icf.csv> ;
+    lden:endPoint <bodypart_icf.csv> ;
     lden:pageSize "-1"^^xsd:int ;
     lden:property <dbpedia_functions> ;
     lden:variable "?x" ;
@@ -322,7 +322,7 @@ lden:HUFO-ICF_spec_source
     rdfs:label "bodypart" .
 
 lden:HUFO-ICF_spec_target
-    lden:endPoint <D:/Work/Data/Muscles/icfENall.csv> ;
+    lden:endPoint <icfENall.csv> ;
     lden:pageSize "-1"^^xsd:int ;
     lden:property <description> ;
     lden:variable "?y" ;
@@ -507,7 +507,7 @@ lden:acm-dblp_spec_review
     a lden:Review .
 
 lden:acm-dblp_spec_source
-    lden:endPoint <D:/Work/Data/DBvsLIMES/DBLP-ACM/ACM.csv> ;
+    lden:endPoint <ACM.csv> ;
     lden:pageSize "-1"^^xsd:int ;
     lden:property <title> ;
     lden:variable "?x" ;
@@ -515,7 +515,7 @@ lden:acm-dblp_spec_source
     rdfs:label "dbpedia" .
 
 lden:acm-dblp_spec_target
-    lden:endPoint <D:/Work/Data/DBvsLIMES/DBLP-ACM/DBLP2.csv> ;
+    lden:endPoint <DBLP2.csv> ;
     lden:pageSize "-1"^^xsd:int ;
     lden:property <title> ;
     lden:variable "?y" ;
@@ -1140,7 +1140,7 @@ lden:cerl_places_DBpedia_2_source
     rdfs:label "dbpedia" .
 
 lden:cerl_places_DBpedia_2_target
-    lden:endPoint <D:/Work/Data/CERL/places.csv> ;
+    lden:endPoint <places.csv> ;
     lden:pageSize "-1"^^xsd:int ;
     lden:property <label> ;
     lden:variable "?y" ;
@@ -1180,7 +1180,7 @@ lden:cerl_places_DBpedia_spec_review
     a lden:Review .
 
 lden:cerl_places_DBpedia_spec_source
-    lden:endPoint <D:/Work/Data/CERL/places.csv> ;
+    lden:endPoint <places.csv> ;
     lden:pageSize "-1"^^xsd:int ;
     lden:property <label> ;
     lden:variable "?x" ;
@@ -7656,7 +7656,7 @@ lden:dbpediaQueryLog_spec_review
     a lden:Review .
 
 lden:dbpediaQueryLog_spec_source
-    lden:endPoint <D:/Work/Data/queries_IDs.txt> ;
+    lden:endPoint <queries_IDs.txt> ;
     lden:pageSize "-1"^^xsd:int ;
     lden:property <label> ;
     lden:variable "?x" ;
@@ -7664,7 +7664,7 @@ lden:dbpediaQueryLog_spec_source
     rdfs:label "CERL" .
 
 lden:dbpediaQueryLog_spec_target
-    lden:endPoint <D:/Work/Data/queries_IDs.txt> ;
+    lden:endPoint <queries_IDs.txt> ;
     lden:pageSize "-1"^^xsd:int ;
     lden:property <label> ;
     lden:variable "?y" ;
@@ -13186,7 +13186,7 @@ lden:musclelist2icf_spec_review
     a lden:Review .
 
 lden:musclelist2icf_spec_source
-    lden:endPoint <D:/Work/Data/Muscles/musclelist.csv> ;
+    lden:endPoint <musclelist.csv> ;
     lden:pageSize "-1"^^xsd:int ;
     lden:property <label> ;
     lden:variable "?x" ;
@@ -13194,7 +13194,7 @@ lden:musclelist2icf_spec_source
     rdfs:label "musclelist" .
 
 lden:musclelist2icf_spec_target
-    lden:endPoint <D:/Work/Data/Muscles/icfenall.csv> ;
+    lden:endPoint <icfenall.csv> ;
     lden:pageSize "-1"^^xsd:int ;
     lden:property <description> ;
     lden:variable "?y" ;
@@ -13233,7 +13233,7 @@ lden:muscles_spec_review
     a lden:Review .
 
 lden:muscles_spec_source
-    lden:endPoint <D:/Work/Data/Muscles/bodypart_icf.csv> ;
+    lden:endPoint <bodypart_icf.csv> ;
     lden:pageSize "-1"^^xsd:int ;
     lden:property <dbpedia_functions> ;
     lden:variable "?x" ;
@@ -13241,7 +13241,7 @@ lden:muscles_spec_source
     rdfs:label "musclelist" .
 
 lden:muscles_spec_target
-    lden:endPoint <D:/Work/Data/Muscles/chariteFragenUpdateEnDeBetter.csv> ;
+    lden:endPoint <chariteFragenUpdateEnDeBetter.csv> ;
     lden:pageSize "-1"^^xsd:int ;
     lden:property <Keywords> ;
     lden:variable "?y" ;
@@ -14415,7 +14415,7 @@ lden:robPhenotypes_spec_review
     a lden:Review .
 
 lden:robPhenotypes_spec_source
-    lden:endPoint <D:/Work/Data/robvectors.txt> ;
+    lden:endPoint <robvectors.txt> ;
     lden:pageSize "-1"^^xsd:int ;
     lden:property <vector> ;
     lden:variable "?x" ;
@@ -14423,7 +14423,7 @@ lden:robPhenotypes_spec_source
     rdfs:label "PHEN" .
 
 lden:robPhenotypes_spec_target
-    lden:endPoint <D:/Work/Data/robvectors.txt> ;
+    lden:endPoint <robvectors.txt> ;
     lden:pageSize "-1"^^xsd:int ;
     lden:property <vector> ;
     lden:variable "?x" ;
